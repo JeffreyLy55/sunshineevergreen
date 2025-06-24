@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – Sunshine Evergreen</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Sunshine Evergreen</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="location.html">Location</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Contact Us</h2>
+      <p>Email: <a href="mailto:office@sunshineevergreen.com">office@sunshineevergreen.com</a></p>
+      <p>Phone: <a href="tel:+15628410654">(562) 841-0654</a></p>
+
+      <h3>Send Us a Message</h3>
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" name="name" required><br /><br />
+
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" required><br /><br />
+
+        <label for="message">Message:</label><br />
+        <textarea id="message" name="message" rows="5" required></textarea><br /><br />
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sunshine Evergreen, Inc.</p>
+  </footer>
+
+  <div class="mascot-container">
+    <img src="images/taro-mascot.png" alt="Taro Mascot" class="corner-mascot" title="Click me for a taro fun fact!" onclick="showFunFact()">
+    <div id="speech-bubble" class="speech-bubble">
+      <span class="close-bubble" onclick="hideFunFact()">×</span>
+    </div>
+  </div>
+
+  <script>
+    const funFacts = [
+      "Taro root has been cultivated for over 5,000 years!",
+      "Taro is rich in fiber, vitamin E, and potassium.",
+      "In Hawaii, taro is used to make traditional poi.",
+      "Taro is naturally purple on the inside — it’s beautiful and delicious!",
+      "Taro leaves are edible too — but only when cooked!",
+      "Taro is a staple food across Asia, Africa, and the Pacific Islands.",
+      "Fun fact: Raw taro is toxic! It must be cooked to be safe to eat."
+    ];
+
+    let currentFactIndex = 0;
+    let factTimeout;
+
+    function showFunFact() {
+      const bubble = document.getElementById("speech-bubble");
+      bubble.style.display = "block";
+      bubble.textContent = funFacts[currentFactIndex];
+
+      const closeBtn = document.createElement("span");
+      closeBtn.textContent = "×";
+      closeBtn.className = "close-bubble";
+      closeBtn.onclick = hideFunFact;
+      bubble.appendChild(closeBtn);
+
+      currentFactIndex = (currentFactIndex + 1) % funFacts.length;
+
+      clearTimeout(factTimeout);
+      factTimeout = setTimeout(hideFunFact, 8000);
+    }
+
+    function hideFunFact() {
+      const bubble = document.getElementById("speech-bubble");
+      bubble.style.display = "none";
+      bubble.innerHTML = '';
+    }
+  </script>
+</body>
+</html>

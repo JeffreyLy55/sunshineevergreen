@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Location – Sunshine Evergreen</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Sunshine Evergreen</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="location.html" class="active">Location</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Visit Us</h2>
+      <p>We're located at:</p>
+      <p><strong>18735 Corby Ave, Artesia, CA 90701</strong></p>
+
+      <div class="map-container">
+        <iframe
+          width="100%" height="300" style="border:0;"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAoO5o4CTrdPOZO0f4nYHzbdHgvoeJFc4o&q=18735+Corby+Ave,+Artesia,+CA+90701">
+        </iframe>
+      </div>
+
+      <a href="https://www.google.com/maps/dir/?api=1&destination=18735+Corby+Ave,+Artesia,+CA+90701" target="_blank">
+        <button>Get Directions</button>
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sunshine Evergreen, Inc.</p>
+  </footer>
+
+  <div class="mascot-container">
+    <img src="images/taro-mascot.png" alt="Taro Mascot" class="corner-mascot" title="Click me for a taro fun fact!" onclick="showFunFact()">
+    <div id="speech-bubble" class="speech-bubble">
+      <span class="close-bubble" onclick="hideFunFact()">×</span>
+    </div>
+  </div>
+
+  <script>
+    const funFacts = [
+      "Taro root has been cultivated for over 5,000 years!",
+      "Taro is rich in fiber, vitamin E, and potassium.",
+      "In Hawaii, taro is used to make traditional poi.",
+      "Taro is naturally purple on the inside — it’s beautiful and delicious!",
+      "Taro leaves are edible too — but only when cooked!",
+      "Taro is a staple food across Asia, Africa, and the Pacific Islands.",
+      "Fun fact: Raw taro is toxic! It must be cooked to be safe to eat."
+    ];
+
+    let currentFactIndex = 0;
+    let factTimeout;
+
+    function showFunFact() {
+      const bubble = document.getElementById("speech-bubble");
+      bubble.style.display = "block";
+      bubble.textContent = funFacts[currentFactIndex];
+
+      const closeBtn = document.createElement("span");
+      closeBtn.textContent = "×";
+      closeBtn.className = "close-bubble";
+      closeBtn.onclick = hideFunFact;
+      bubble.appendChild(closeBtn);
+
+      currentFactIndex = (currentFactIndex + 1) % funFacts.length;
+
+      clearTimeout(factTimeout);
+      factTimeout = setTimeout(hideFunFact, 8000);
+    }
+
+    function hideFunFact() {
+      const bubble = document.getElementById("speech-bubble");
+      bubble.style.display = "none";
+      bubble.innerHTML = '';
+    }
+  </script>
+</body>
+</html>
