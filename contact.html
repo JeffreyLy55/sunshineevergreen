@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact — Sunshine Produce</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 34 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='17' cy='17' r='17' fill='%232d4a2d'/%3E%3Cpath d='M17 6 C17 6%2C 27 12%2C 27 20 C27 25.5 22.5 28 17 28 C17 28%2C 17 18%2C 10 14 C13 14%2C 17 6%2C 17 6Z' fill='%23f0c040'/%3E%3Cpath d='M17 28 L17 15' stroke='%232d4a2d' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E"/>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 34 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='17' cy='17' r='17' fill='%232d4a2d'/%3E%3Cpath d='M17 6 C17 6%2C 27 12%2C 27 20 C27 25.5 22.5 28 17 28 C17 28%2C 17 18%2C 10 14 C13 14%2C 17 6%2C 17 6Z' fill='%23f0c040'/%3E%3Cpath d='M17 28 L17 15' stroke='%232d4a2d' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E"/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -304,9 +303,17 @@
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Reveal on scroll — also trigger elements already in view on load
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  // Immediately reveal anything already visible in the viewport
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.reveal').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) el.classList.add('visible');
+    });
+  });
 
   function handleSubmit() {
