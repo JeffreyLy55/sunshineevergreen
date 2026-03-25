@@ -545,12 +545,12 @@
         <span class="hero-stat-label">Years Serving SoCal</span>
       </div>
       <div>
-        <span class="hero-stat-num">Fresh</span>
-        <span class="hero-stat-label">Peeled & Vacuum-Sealed</span>
+        <span class="hero-stat-num">14+</span>
+        <span class="hero-stat-label">Products in Catalog</span>
       </div>
       <div>
         <span class="hero-stat-num">Wholesale</span>
-        <span class="hero-stat-label">Bulk & Delivery Available</span>
+        <span class="hero-stat-label">Bulk &amp; Delivery Available</span>
       </div>
     </div>
   </div>
@@ -601,13 +601,7 @@
 <!-- ABOUT STRIP -->
 <section class="about-strip">
   <div class="about-img">
-    <!-- fallback gradient if no image -->
-    <div style="width:100%;height:100%;background:linear-gradient(135deg,#2d4a2d 0%,#5a8c3e 50%,#c8930a 100%);display:flex;align-items:center;justify-content:center;">
-      <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-        <path d="M60 10C60 10,100 30,100 65C100 90,85 105,60 108C60 108,60 65,35 52C44 52,60 10,60 10Z" fill="rgba(240,192,64,0.35)"/>
-        <path d="M60 108 L60 45" stroke="rgba(240,192,64,0.5)" stroke-width="3" stroke-linecap="round"/>
-      </svg>
-    </div>
+    <img src="images/raw_taro_root.png" alt="Raw taro root" style="mix-blend-mode: multiply;"/>
     <div class="about-img-overlay"></div>
   </div>
   <div class="about-content reveal">
@@ -629,7 +623,7 @@
   <div class="products-grid">
     <div class="product-card reveal reveal-delay-1">
       <div class="product-card-img">
-        <img src="images/pngtree-fresh-taro-roots-png-image_5683574.png" alt="Fresh Peeled Taro" onerror="this.parentElement.innerHTML='<div class=\'product-placeholder\'><svg viewBox=\'0 0 80 80\' fill=none><path d=\'M40 8C40 8,68 22,68 45C68 62,56 70,40 72C40 72,40 48,20 37C28 37,40 8,40 8Z\' fill=\'%232d4a2d\'/></svg></div>'"/>
+        <img src="images/pngtree-fresh-taro-roots-png-image_5683574.png" alt="Fresh Peeled Taro Root" style="mix-blend-mode: multiply;"/>
       </div>
       <div class="product-card-body">
         <div class="product-card-tag">Bestseller</div>
@@ -639,24 +633,22 @@
     </div>
     <div class="product-card reveal reveal-delay-2">
       <div class="product-card-img">
-        <img src="images/raw_taro_root.png" alt="Raw Taro Root" onerror="this.parentElement.innerHTML='<div class=\'product-placeholder\'><svg viewBox=\'0 0 80 80\' fill=none><path d=\'M40 8C40 8,68 22,68 45C68 62,56 70,40 72C40 72,40 48,20 37C28 37,40 8,40 8Z\' fill=\'%232d4a2d\'/></svg></div>'"/>
-      </div>
-      <div class="product-card-body">
-        <div class="product-card-tag">Raw & Whole</div>
-        <div class="product-card-name">Raw Taro Root</div>
-        <div class="product-card-desc">Whole taro root, straight from source. Ideal for vendors who process their own batches.</div>
-      </div>
-    </div>
-    <div class="product-card reveal reveal-delay-3">
-      <div class="product-placeholder" style="height:220px;">
-        <svg viewBox="0 0 80 80" fill="none" style="width:64px;height:64px;opacity:0.2;">
-          <path d="M40 8C40 8,68 22,68 45C68 62,56 70,40 72C40 72,40 48,20 37C28 37,40 8,40 8Z" fill="#2d4a2d"/>
-        </svg>
+        <img src="images/IMG_3301.jpg" alt="AKFoods Cashews & Nuts"/>
       </div>
       <div class="product-card-body">
         <div class="product-card-tag">Imported</div>
-        <div class="product-card-name">Vietnamese Imported Goods</div>
-        <div class="product-card-desc">Seasonal edible imports sourced directly. Contact us for current availability and pricing.</div>
+        <div class="product-card-name">AKFoods Cashews &amp; Nuts</div>
+        <div class="product-card-desc">A full range of imported roasted cashews and mixed nuts. 9 varieties available wholesale by the box.</div>
+      </div>
+    </div>
+    <div class="product-card reveal reveal-delay-3">
+      <div class="product-card-img">
+        <img src="images/IMG_3299.jpg" alt="Sunsweet Plums"/>
+      </div>
+      <div class="product-card-body">
+        <div class="product-card-tag">Imported</div>
+        <div class="product-card-name">Sunsweet Plums</div>
+        <div class="product-card-desc">Salt-dried Vietnamese plums, a popular specialty snack. Available wholesale by the case.</div>
       </div>
     </div>
   </div>
@@ -738,7 +730,7 @@
       <h4>Contact</h4>
       <address>
         <a href="tel:+15628417881">(562) 841-7881</a><br/>
-        <a href="/cdn-cgi/l/email-protection#92fdf4f4fbf1f7d2e1e7fce1fafbfcf7f7e4f7e0f5e0f7f7fcbcf1fdff"><span class="__cf_email__" data-cfemail="c2ada4a4aba1a782b1b7acb1aaabaca7a7b4a7b0a5b0a7a7aceca1adaf">[email&#160;protected]</span></a><br/>
+        <a href="mailto:office@sunshineevergreen.com">office@sunshineevergreen.com</a><br/>
         Los Angeles Area, CA
       </address>
     </div>
@@ -749,6 +741,18 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Scroll reveal
-  const observe
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.reveal').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) el.classList.add('visible');
+    });
+  });
+</script>
+</body>
+</html>

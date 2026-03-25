@@ -74,7 +74,7 @@
     }
     .product-card { background: var(--white); border-radius: 3px; overflow: hidden; border: 1px solid var(--cream2); transition: transform 0.2s, box-shadow 0.2s; }
     .product-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(45,74,45,0.12); }
-    .product-card-img { width: 100%; height: 240px; overflow: hidden; background: var(--cream2); position: relative; }
+    .product-card-img { width: 100%; height: 220px; overflow: hidden; background: var(--cream2); position: relative; display: flex; align-items: center; justify-content: center; }
     .product-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
     .product-card:hover .product-card-img img { transform: scale(1.04); }
     .product-placeholder { width: 100%; height: 240px; background: linear-gradient(135deg, var(--cream2), var(--cream)); display: flex; align-items: center; justify-content: center; }
@@ -142,6 +142,39 @@
       mix-blend-mode: multiply;
       background: transparent;
     }
+
+    /* Unavailable badge */
+    .badge-unavailable {
+      position: absolute; top: 1rem; right: 1rem;
+      background: rgba(30,42,30,0.75); color: #ede5d0;
+      font-size: 0.65rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.3rem 0.7rem; border-radius: 2px;
+    }
+    .product-card.unavailable { opacity: 0.65; }
+    .product-card.unavailable .product-card-img img { filter: grayscale(30%); }
+
+    /* Garlic placeholder */
+    .garlic-placeholder {
+      width: 100%; height: 220px;
+      background: linear-gradient(135deg, #e8f0e0, #d4e6c4);
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* Category headings */
+    .catalog-category { margin-bottom: 4rem; }
+    .catalog-category-header { margin-bottom: 2rem; }
+    .catalog-category-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; color: var(--green);
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--cream2);
+      margin-bottom: 0.5rem;
+    }
+    .catalog-category-subtitle {
+      font-size: 0.88rem; color: var(--muted);
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -175,91 +208,414 @@
 </header>
 
 <section class="products-body">
-  <div class="products-intro reveal">
-    <h2>Current Selection</h2>
-    <p>All products are available for wholesale purchase. Contact us for current pricing, minimum order quantities, and delivery scheduling.</p>
+
+  <!-- ── CATEGORY 1: Fresh Taro Root ── -->
+  <div class="catalog-category">
+    <div class="catalog-category-header reveal">
+      <h3>Fresh Taro Root</h3>
+      <p class="catalog-category-subtitle">Imported and processed in-house at our Los Angeles area facility. Available in bulk wholesale quantities.</p>
+    </div>
+    <div class="products-grid">
+
+      <div class="product-card reveal reveal-delay-1">
+        <div class="product-card-img">
+          <img src="images/pngtree-fresh-taro-roots-png-image_5683574.png" alt="Fresh Peeled Taro Root" style="mix-blend-mode: multiply;"/>
+          <div class="product-badge">Bestseller</div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-tag">Bestseller</div>
+          <div class="product-card-name">Fresh Peeled Taro Root</div>
+          <div class="product-card-desc">Peeled, vacuum-sealed, and ready to cook. Processed in-house for consistent quality and extended shelf life.</div>
+          <div class="product-card-details">
+            <div class="product-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Vacuum-sealed packaging
+            </div>
+            <div class="product-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Bulk wholesale quantities
+            </div>
+            <div class="product-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Custom packaging available
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal reveal-delay-2">
+        <div class="product-card-img">
+          <img src="images/raw_taro_root.png" alt="Raw Taro Root" style="mix-blend-mode: multiply;"/>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-tag">Whole</div>
+          <div class="product-card-name">Raw Taro Root</div>
+          <div class="product-card-desc">Whole unprocessed taro root. Ideal for vendors who process and package their own batches.</div>
+          <div class="product-card-details">
+            <div class="product-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Whole root, unprocessed
+            </div>
+            <div class="product-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Bulk wholesale quantities
+            </div>
+            <div class="product-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Seasonal availability
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
-  <div class="products-grid">
+  <!-- ── CATEGORY 2: AKFoods Cashews & Nuts ── -->
+  <div class="catalog-category">
+    <div class="catalog-category-header reveal">
+      <h3>AKFoods Cashews &amp; Nuts</h3>
+      <p class="catalog-category-subtitle">Imported roasted cashews and mixed nuts. Wholesale by the box — 12 cans per box, 400g / 14oz per can unless noted.</p>
+    </div>
+    <div class="products-grid">
 
-    <div class="product-card reveal reveal-delay-1">
-      <div class="product-card-img">
-        <img src="images/pngtree-fresh-taro-roots-png-image_5683574.png" alt="Fresh Peeled Taro Root" onerror="this.style.display='none'"/>
-        <div class="product-badge">Bestseller</div>
-      </div>
-      <div class="product-card-body">
-        <div class="product-card-tag">Processed</div>
-        <div class="product-card-name">Fresh Peeled Taro Root</div>
-        <div class="product-card-desc">Peeled, vacuum-sealed, and ready to cook. Processed in-house for consistent quality and extended shelf life.</div>
-        <div class="product-card-details">
-          <div class="product-detail">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Vacuum-sealed packaging
-          </div>
-          <div class="product-detail">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Bulk wholesale quantities
-          </div>
-          <div class="product-detail">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Custom packaging available
+      <div class="product-card reveal reveal-delay-1">
+        <div class="product-card-img">
+          <img src="images/IMG_3301.jpg" alt="Salt & Pepper Roasted Cashews"/>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-tag">Cashews</div>
+          <div class="product-card-name">Salt &amp; Pepper Roasted Cashews</div>
+          <div class="product-card-desc">Wholesale by the box. Contact us for current availability and bulk pricing.</div>
+          <div class="product-card-details">
+            <div class="product-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              12 cans per box · 400g / 14oz per can
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="product-card reveal reveal-delay-2">
-      <div class="product-card-img">
-        <img src="images/raw_taro_root.png" alt="Raw Taro Root" onerror="this.style.display='none'"/>
-      </div>
-      <div class="product-card-body">
-        <div class="product-card-tag">Whole</div>
-        <div class="product-card-name">Raw Taro Root</div>
-        <div class="product-card-desc">Whole, unprocessed taro root direct from source. Ideal for vendors who process and package their own product.</div>
-        <div class="product-card-details">
-          <div class="product-detail">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Whole root, unprocessed
-          </div>
-          <div class="product-detail">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Bulk wholesale quantities
-          </div>
-          <div class="product-detail">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Seasonal availability
+      <div class="product-card reveal reveal-delay-2">
+        <div class="product-card-img">
+          <img src="images/IMG_3302.jpg" alt="Unsalted Roasted Cashews"/>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-tag">Cashews</div>
+          <div class="product-card-name">Unsalted Roasted Cashews</div>
+          <div class="product-card-desc">Wholesale by the box. Contact us for current availability and bulk pricing.</div>
+          <div class="product-card-details">
+            <div class="product-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              12 cans per box · 400g / 14oz per can
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="product-card reveal reveal-delay-3">
-      <div class="product-placeholder">
-        <svg width="56" height="56" viewBox="0 0 80 80" fill="none" style="opacity:0.2;">
-          <path d="M40 8C40 8,68 22,68 45C68 62,56 70,40 72C40 72,40 48,20 37C28 37,40 8,40 8Z" fill="#2d4a2d"/>
-        </svg>
-      </div>
-      <div class="product-card-body">
-        <div class="product-card-tag">Imported</div>
-        <div class="product-card-name">Vietnamese Imported Goods</div>
-        <div class="product-card-desc">Seasonal edible goods sourced and imported directly from Vietnam. Selection varies — contact us for current availability.</div>
-        <div class="product-card-details">
-          <div class="product-detail">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Directly imported
-          </div>
-          <div class="product-detail">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Seasonal selection
-          </div>
-          <div class="product-detail">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Contact us for availability
+      <div class="product-card reveal reveal-delay-3">
+        <div class="product-card-img">
+          <img src="images/IMG_3303.jpg" alt="Sweet Sesame Roasted Cashews"/>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-tag">Cashews</div>
+          <div class="product-card-name">Sweet Sesame Roasted Cashews</div>
+          <div class="product-card-desc">Wholesale by the box. Contact us for current availability and bulk pricing.</div>
+          <div class="product-card-details">
+            <div class="product-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              12 cans per box · 400g / 14oz per can
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
+      <div class="product-card reveal reveal-delay-1">
+        <div class="product-card-img">
+          <img src="images/IMG_3304.jpg" alt="Salted Roasted Cashews"/>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-tag">Cashews</div>
+          <div class="product-card-name">Salted Roasted Cashews</div>
+          <div class="product-card-desc">Wholesale by the box. Contact us for current availability and bulk pricing.</div>
+          <div class="product-card-details">
+            <div class="product-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              12 cans per box · 400g / 14oz per can
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal reveal-delay-2">
+        <div class="product-card-img">
+          <img src="images/IMG_3305.jpg" alt="Roasted Salted Jumbo Cashews with Skin"/>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-tag">Cashews</div>
+          <div class="product-card-name">Roasted Salted Jumbo Cashews with Skin</div>
+          <div class="product-card-desc">Wholesale by the box. Contact us for current availability and bulk pricing.</div>
+          <div class="product-card-details">
+            <div class="product-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              12 cans per box · 400g / 14oz per can
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal reveal-delay-3">
+        <div class="product-card-img">
+          <img src="images/IMG_3301.jpg" alt="Dry Roasted and Garlic Cashews"/>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-tag">Cashews</div>
+          <div class="product-card-name">Dry Roasted and Garlic Cashews</div>
+          <div class="product-card-desc">Wholesale by the box. Contact us for current availability and bulk pricing.</div>
+          <div class="product-card-details">
+            <div class="product-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              12 cans per box · 400g / 14oz per can
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal reveal-delay-1">
+        <div class="product-card-img">
+          <img src="images/IMG_3302.jpg" alt="Dry Roasted and Wasabi Cashews"/>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-tag">Cashews</div>
+          <div class="product-card-name">Dry Roasted and Wasabi Cashews</div>
+          <div class="product-card-desc">Wholesale by the box. Contact us for current availability and bulk pricing.</div>
+          <div class="product-card-details">
+            <div class="product-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              12 cans per box · 400g / 14oz per can
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal reveal-delay-2">
+        <div class="product-card-img">
+          <img src="images/IMG_3304.jpg" alt="Roasted and Black Sesame Cashews"/>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-tag">Cashews</div>
+          <div class="product-card-name">Roasted and Black Sesame Cashews</div>
+          <div class="product-card-desc">Wholesale by the box. Contact us for current availability and bulk pricing.</div>
+          <div class="product-card-details">
+            <div class="product-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              12 cans per box · 400g / 14oz per can
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal reveal-delay-3">
+        <div class="product-card-img">
+          <img src="images/IMG_3303.jpg" alt="Roasted and Honey Mixed Nuts"/>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-tag">Mixed Nuts</div>
+          <div class="product-card-name">Roasted and Honey Mixed Nuts</div>
+          <div class="product-card-desc">Wholesale by the box. Contact us for current availability and bulk pricing.</div>
+          <div class="product-card-details">
+            <div class="product-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              12 cans per box · 400g / 14oz per can
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card unavailable reveal reveal-delay-1">
+        <div class="product-card-img">
+          <img src="images/IMG_5600.jpg" alt="Seaweed with Seeds"/>
+          <div class="badge-unavailable">Currently Unavailable</div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-tag">Snack</div>
+          <div class="product-card-name">Seaweed with Seeds (Rong Biển Kẹp Hạt)</div>
+          <div class="product-card-desc">Seaweed bars with seeds. Contact us to check availability.</div>
+          <div class="product-card-details">
+            <div class="product-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              40 bags per box · 250g / 8.5oz per bag
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── CATEGORY 3: Imported Goods & Snacks ── -->
+  <div class="catalog-category">
+    <div class="catalog-category-header reveal">
+      <h3>Imported Goods &amp; Snacks</h3>
+      <p class="catalog-category-subtitle">Specialty imported products sourced directly from Vietnam. Contact us for seasonal availability and wholesale pricing.</p>
+    </div>
+    <div class="products-grid">
+
+      <div class="product-card reveal reveal-delay-1">
+        <div class="product-card-img">
+          <img src="images/IMG_3299.jpg" alt="Sunsweet Plums"/>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-tag">Imported</div>
+          <div class="product-card-name">Sunsweet Plums (Mận Khía Sấy Chanh Muối)</div>
+          <div class="product-card-desc">Salt-dried plums, a popular Vietnamese snack. Available wholesale by the case.</div>
+          <div class="product-card-details">
+            <div class="product-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              18 cans per box · 500g / 17.6oz per can
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card unavailable reveal reveal-delay-2">
+        <div class="product-card-img">
+          <img src="images/IMG_3297.jpg" alt="Soft Dried Soursop"/>
+          <div class="badge-unavailable">Currently Unavailable</div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-tag">Imported</div>
+          <div class="product-card-name">Soft Dried Soursop (Măng Cầu Xiêm)</div>
+          <div class="product-card-desc">Soft dried soursop, 100% natural. Product of Vietnam.</div>
+          <div class="product-card-details">
+            <div class="product-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Contact us for availability
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card unavailable reveal reveal-delay-3">
+        <div class="product-card-img">
+          <img src="images/IMG_5612.JPG" alt="Spicy & Sour Dried Pistachio Jam"/>
+          <div class="badge-unavailable">Currently Unavailable</div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-tag">Imported</div>
+          <div class="product-card-name">Spicy &amp; Sour Dried Pistachio Jam (Mứt Chùm Ruột Sấy Chua Cay)</div>
+          <div class="product-card-desc">Spicy and sour dried fruit jam. Product of Vietnam.</div>
+          <div class="product-card-details">
+            <div class="product-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Contact us for availability
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card unavailable reveal reveal-delay-1">
+        <div class="product-card-img">
+          <img src="images/IMG_5613.JPG" alt="Sweet Berry Jam"/>
+          <div class="badge-unavailable">Currently Unavailable</div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-tag">Imported</div>
+          <div class="product-card-name">Sweet Berry Jam (Mứt Chùm Ruột)</div>
+          <div class="product-card-desc">Sweet dried berry jam. Product of Vietnam.</div>
+          <div class="product-card-details">
+            <div class="product-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Contact us for availability
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card unavailable reveal reveal-delay-2">
+        <div class="product-card-img">
+          <img src="images/IMG_5606.JPG" alt="Mixed Nuts Bar"/>
+          <div class="badge-unavailable">Currently Unavailable</div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-tag">Snack</div>
+          <div class="product-card-name">Mixed Nuts Bar (Thanh Hạt Dinh Dưỡng)</div>
+          <div class="product-card-desc">Natural mixed nut bars with brown rice, seeds, and honey.</div>
+          <div class="product-card-details">
+            <div class="product-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Contact us for availability
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── CATEGORY 4: Minced Garlic ── -->
+  <div class="catalog-category">
+    <div class="catalog-category-header reveal">
+      <h3>Minced Garlic</h3>
+      <p class="catalog-category-subtitle">Fresh minced garlic, available in two sizes.</p>
+    </div>
+    <div class="products-grid">
+
+      <div class="product-card reveal reveal-delay-1">
+        <div class="garlic-placeholder">
+          <svg width="72" height="72" viewBox="0 0 80 80" fill="none">
+            <path d="M40 15 C40 15, 28 20, 24 32 C20 44, 28 58, 40 60
+                     C52 58, 60 44, 56 32 C52 20, 40 15, 40 15Z"
+                  fill="#e8f0e0" stroke="#5a8c3e" stroke-width="1.5"/>
+            <path d="M40 15 C40 15, 40 35, 40 60" stroke="#5a8c3e"
+                  stroke-width="1" stroke-dasharray="2,2"/>
+            <path d="M40 15 C40 15, 32 10, 30 5" stroke="#5a8c3e"
+                  stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M40 15 C40 15, 48 10, 50 5" stroke="#5a8c3e"
+                  stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-tag">Garlic</div>
+          <div class="product-card-name">Minced Garlic — 7oz</div>
+          <div class="product-card-desc">Fresh minced garlic, ready to use. Available wholesale.</div>
+          <div class="product-card-details">
+            <div class="product-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Available in bulk wholesale quantities
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal reveal-delay-2">
+        <div class="garlic-placeholder">
+          <svg width="72" height="72" viewBox="0 0 80 80" fill="none">
+            <path d="M40 15 C40 15, 28 20, 24 32 C20 44, 28 58, 40 60
+                     C52 58, 60 44, 56 32 C52 20, 40 15, 40 15Z"
+                  fill="#e8f0e0" stroke="#5a8c3e" stroke-width="1.5"/>
+            <path d="M40 15 C40 15, 40 35, 40 60" stroke="#5a8c3e"
+                  stroke-width="1" stroke-dasharray="2,2"/>
+            <path d="M40 15 C40 15, 32 10, 30 5" stroke="#5a8c3e"
+                  stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M40 15 C40 15, 48 10, 50 5" stroke="#5a8c3e"
+                  stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-tag">Garlic</div>
+          <div class="product-card-name">Minced Garlic — 14oz</div>
+          <div class="product-card-desc">Fresh minced garlic in a larger size for high-volume kitchens.</div>
+          <div class="product-card-details">
+            <div class="product-detail">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Available in bulk wholesale quantities
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <div class="wholesale-callout reveal">
@@ -290,7 +646,7 @@
       <h4>Contact</h4>
       <address>
         <a href="tel:+15628417881">(562) 841-7881</a><br/>
-        <a href="/cdn-cgi/l/email-protection#90fff6f6f9f3f5d0e3e5fee3f8f9fef5f5e6f5e2f7e2f5f5febef3fffd"><span class="__cf_email__" data-cfemail="6e010808070d0b2e1d1b001d0607000b0b180b1c091c0b0b00400d0103">[email&#160;protected]</span></a><br/>
+        <a href="mailto:office@sunshineevergreen.com">office@sunshineevergreen.com</a><br/>
         Los Angeles Area, CA
       </address>
     </div>
@@ -301,5 +657,17 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  const observe
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.reveal').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) el.classList.add('visible');
+    });
+  });
+</script>
+</body>
+</html>
