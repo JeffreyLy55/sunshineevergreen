@@ -182,7 +182,7 @@
             <div class="contact-method-value">(562) 841-7881</div>
           </div>
         </a>
-        <a href="/cdn-cgi/l/email-protection#80efe6e6e9e3e5c0f3f5eef3e8e9eee5e5f6e5f2e7f2e5e5eeaee3efed" class="contact-method">
+        <a href="mailto:office@sunshineevergreen.com" class="contact-method">
           <div class="contact-method-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -191,7 +191,7 @@
           </div>
           <div>
             <div class="contact-method-label">Email</div>
-            <div class="contact-method-value"><span class="__cf_email__" data-cfemail="49262f2f202a2c093a3c273a2120272c2c3f2c3b2e3b2c2c27672a2624">[email&#160;protected]</span></div>
+            <div class="contact-method-value">office@sunshineevergreen.com</div>
           </div>
         </a>
         <div class="contact-method" style="cursor:default;">
@@ -256,7 +256,7 @@
           <textarea id="message" placeholder="Tell us what you're looking for — product, quantity, delivery area, etc."></textarea>
         </div>
         <button class="btn-primary" onclick="handleSubmit()">Send Message</button>
-        <p class="form-note">We typically respond within one business day. For urgent matters, call us directly at (562) 841-7881.</p>
+        <p class="form-note">We typically respond within one business day. For urgent inquiries, call us directly at (562) 841-7881.</p>
       </div>
 
       <div class="form-success" id="formSuccess">
@@ -291,7 +291,7 @@
       <h4>Contact</h4>
       <address>
         <a href="tel:+15628417881">(562) 841-7881</a><br/>
-        <a href="/cdn-cgi/l/email-protection#0a656c6c63696f4a797f64796263646f6f7c6f786d786f6f6424696567"><span class="__cf_email__" data-cfemail="e78881818e8482a7949289948f8e8982829182958095828289c984888a">[email&#160;protected]</span></a><br/>
+        <a href="mailto:office@sunshineevergreen.com">office@sunshineevergreen.com</a><br/>
         Los Angeles Area, CA
       </address>
     </div>
@@ -302,7 +302,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Reveal on scroll — also trigger elements already in view on load
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
@@ -317,3 +317,9 @@
   });
 
   function handleSubmit() {
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }
+</script>
+</body>
+</html>
