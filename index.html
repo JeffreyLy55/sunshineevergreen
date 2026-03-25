@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sunshine Produce — Fresh Wholesale Produce, Southern California</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 34 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='17' cy='17' r='17' fill='%232d4a2d'/%3E%3Cpath d='M17 6 C17 6%2C 27 12%2C 27 20 C27 25.5 22.5 28 17 28 C17 28%2C 17 18%2C 10 14 C13 14%2C 17 6%2C 17 6Z' fill='%23f0c040'/%3E%3Cpath d='M17 28 L17 15' stroke='%232d4a2d' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'"/>
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500&display=swap"/></noscript>
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg viewBox='0 0 34 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='17' cy='17' r='17' fill='%232d4a2d'/%3E%3Cpath d='M17 6 C17 6%2C 27 12%2C 27 20 C27 25.5 22.5 28 17 28 C17 28%2C 17 18%2C 10 14 C13 14%2C 17 6%2C 17 6Z' fill='%23f0c040'/%3E%3Cpath d='M17 28 L17 15' stroke='%232d4a2d' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500&display=swap"
+    media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500&display=swap" />
+  </noscript>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --cream:    #f7f2e8;
-      --cream2:   #ede5d0;
-      --green:    #2d4a2d;
-      --green2:   #3e6b3e;
-      --gold:     #c8930a;
-      --gold-lt:  #f0c040;
-      --terra:    #b85c38;
-      --text:     #1e2a1e;
-      --muted:    #6b7c6b;
-      --white:    #ffffff;
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    html { scroll-behavior: smooth; }
+    :root {
+      --cream: #f7f2e8;
+      --cream2: #ede5d0;
+      --green: #2d4a2d;
+      --green2: #3e6b3e;
+      --gold: #c8930a;
+      --gold-lt: #f0c040;
+      --terra: #b85c38;
+      --text: #1e2a1e;
+      --muted: #6b7c6b;
+      --white: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: 'DM Sans', sans-serif;
@@ -37,16 +52,24 @@
     /* ── Texture overlay ── */
     body::before {
       content: '';
-      position: fixed; inset: 0;
+      position: fixed;
+      inset: 0;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none; z-index: 0;
+      pointer-events: none;
+      z-index: 0;
       opacity: 0.5;
     }
 
     /* ── NAV ── */
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       padding: 1.1rem 4rem;
       background: rgba(247, 242, 232, 0.92);
       backdrop-filter: blur(10px);
@@ -54,130 +77,234 @@
     }
 
     .nav-logo {
-      display: flex; align-items: center; gap: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
       text-decoration: none;
     }
-    .nav-logo svg { width: 34px; height: 34px; }
+
+    .nav-logo svg {
+      width: 34px;
+      height: 34px;
+    }
+
     .nav-logo-text {
       font-family: 'Playfair Display', serif;
-      font-size: 1.15rem; font-weight: 700;
+      font-size: 1.15rem;
+      font-weight: 700;
       color: var(--green);
       line-height: 1.1;
     }
-    .nav-logo-text span { display: block; font-size: 0.6rem; font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); font-family: 'DM Sans', sans-serif; }
 
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-logo-text span {
+      display: block;
+      font-size: 0.6rem;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
     .nav-links a {
-      text-decoration: none; color: var(--text);
-      font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em;
-      position: relative; padding-bottom: 2px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      position: relative;
+      padding-bottom: 2px;
       transition: color 0.2s;
     }
+
     .nav-links a::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1.5px;
-      background: var(--gold); transform: scaleX(0); transform-origin: left;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1.5px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
       transition: transform 0.25s ease;
     }
-    .nav-links a:hover { color: var(--green); }
-    .nav-links a:hover::after { transform: scaleX(1); }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+    }
 
     .nav-cta {
-      background: var(--green); color: var(--white) !important;
-      padding: 0.55rem 1.3rem !important; border-radius: 2px;
+      background: var(--green);
+      color: var(--white) !important;
+      padding: 0.55rem 1.3rem !important;
+      border-radius: 2px;
       transition: background 0.2s !important;
     }
-    .nav-cta:hover { background: var(--green2) !important; }
-    .nav-cta::after { display: none !important; }
+
+    .nav-cta:hover {
+      background: var(--green2) !important;
+    }
+
+    .nav-cta::after {
+      display: none !important;
+    }
 
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
-      display: grid; grid-template-columns: 1fr 1fr;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       padding-top: 72px;
-      position: relative; overflow: hidden;
+      position: relative;
+      overflow: hidden;
     }
 
     .hero-left {
-      display: flex; flex-direction: column; justify-content: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       padding: 5rem 3rem 5rem 4rem;
-      position: relative; z-index: 2;
+      position: relative;
+      z-index: 2;
     }
 
     .hero-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: var(--gold-lt); color: var(--text);
-      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em;
-      text-transform: uppercase; padding: 0.35rem 0.85rem; border-radius: 2px;
-      margin-bottom: 1.8rem; width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--gold-lt);
+      color: var(--text);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border-radius: 2px;
+      margin-bottom: 1.8rem;
+      width: fit-content;
       animation: fadeUp 0.6s ease both;
     }
-    .hero-badge::before { content: '✦'; color: var(--gold); font-size: 0.65rem; }
+
+    .hero-badge::before {
+      content: '✦';
+      color: var(--gold);
+      font-size: 0.65rem;
+    }
 
     .hero h1 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2.8rem, 5vw, 4.2rem);
-      font-weight: 700; line-height: 1.1;
+      font-weight: 700;
+      line-height: 1.1;
       color: var(--green);
       margin-bottom: 1.5rem;
       animation: fadeUp 0.6s 0.1s ease both;
     }
+
     .hero h1 em {
-      font-style: italic; color: var(--terra);
+      font-style: italic;
+      color: var(--terra);
     }
 
     .hero-sub {
-      font-size: 1.05rem; line-height: 1.7; color: var(--muted);
-      max-width: 440px; margin-bottom: 2.5rem;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 440px;
+      margin-bottom: 2.5rem;
       animation: fadeUp 0.6s 0.2s ease both;
     }
 
     .hero-actions {
-      display: flex; gap: 1rem; flex-wrap: wrap;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
       animation: fadeUp 0.6s 0.3s ease both;
     }
 
     .btn-primary {
-      background: var(--green); color: var(--white);
-      padding: 0.85rem 2rem; border-radius: 2px;
-      text-decoration: none; font-weight: 500; font-size: 0.9rem;
+      background: var(--green);
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      border-radius: 2px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
       letter-spacing: 0.04em;
       transition: background 0.2s, transform 0.15s;
       display: inline-block;
     }
-    .btn-primary:hover { background: var(--green2); transform: translateY(-1px); }
+
+    .btn-primary:hover {
+      background: var(--green2);
+      transform: translateY(-1px);
+    }
 
     .btn-secondary {
-      background: transparent; color: var(--green);
-      padding: 0.85rem 2rem; border-radius: 2px;
-      text-decoration: none; font-weight: 500; font-size: 0.9rem;
+      background: transparent;
+      color: var(--green);
+      padding: 0.85rem 2rem;
+      border-radius: 2px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
       border: 1.5px solid var(--green);
       letter-spacing: 0.04em;
       transition: background 0.2s, color 0.2s, transform 0.15s;
       display: inline-block;
     }
-    .btn-secondary:hover { background: var(--green); color: var(--white); transform: translateY(-1px); }
+
+    .btn-secondary:hover {
+      background: var(--green);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
 
     .hero-stats {
-      display: flex; gap: 2.5rem; margin-top: 3.5rem;
-      padding-top: 2rem; border-top: 1px solid var(--cream2);
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--cream2);
       animation: fadeUp 0.6s 0.4s ease both;
     }
+
     .hero-stat-num {
       font-family: 'Playfair Display', serif;
-      font-size: 1.9rem; font-weight: 700; color: var(--green);
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--green);
       display: block;
     }
+
     .hero-stat-label {
-      font-size: 0.78rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase;
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
     }
 
     .hero-right {
-      position: relative; overflow: hidden;
+      position: relative;
+      overflow: hidden;
       animation: fadeIn 0.8s 0.2s ease both;
     }
+
     .hero-right::before {
       content: '';
-      position: absolute; inset: 0;
+      position: absolute;
+      inset: 0;
       background: linear-gradient(135deg, var(--green) 0%, var(--green2) 50%, #5a8c3e 100%);
       clip-path: polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%);
       z-index: 1;
@@ -185,299 +312,595 @@
 
     /* Decorative botanical SVG in hero */
     .hero-botanical {
-      position: absolute; top: 50%; left: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
       transform: translate(-42%, -50%);
-      z-index: 2; width: 78%; opacity: 0.18;
+      z-index: 2;
+      width: 78%;
+      opacity: 0.18;
     }
 
     .hero-img-stack {
-      position: absolute; inset: 0; z-index: 3;
-      display: flex; align-items: center; justify-content: center;
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+
     .hero-float-img {
       position: absolute;
-      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
       mix-blend-mode: multiply;
     }
+
     .hero-float-main {
       width: 72%;
-      top: 50%; left: 48%;
+      top: 50%;
+      left: 48%;
       transform: translate(-50%, -50%) rotate(-3deg);
     }
+
     .hero-float-secondary {
       width: 44%;
-      bottom: 8%; right: 4%;
+      bottom: 8%;
+      right: 4%;
       transform: rotate(4deg);
     }
 
     /* ── MARQUEE ── */
     .marquee-bar {
-      background: var(--green); color: var(--cream);
-      padding: 0.75rem 0; overflow: hidden;
-      position: relative; z-index: 2;
+      background: var(--green);
+      color: var(--cream);
+      padding: 0.75rem 0;
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
     }
+
     .marquee-track {
-      display: flex; gap: 0;
+      display: flex;
+      gap: 0;
       animation: marquee 22s linear infinite;
       width: max-content;
     }
-    .marquee-item {
-      white-space: nowrap; padding: 0 2.5rem;
-      font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
-      display: flex; align-items: center; gap: 1.2rem;
-    }
-    .marquee-item::after { content: '✦'; color: var(--gold-lt); font-size: 0.6rem; }
 
-    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-item {
+      white-space: nowrap;
+      padding: 0 2.5rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .marquee-item::after {
+      content: '✦';
+      color: var(--gold-lt);
+      font-size: 0.6rem;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
 
     /* ── ABOUT STRIP ── */
     .about-strip {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 0; min-height: 520px; position: relative; z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      min-height: 520px;
+      position: relative;
+      z-index: 2;
     }
 
     .about-img {
       background: var(--cream2);
-      position: relative; overflow: hidden;
+      position: relative;
+      overflow: hidden;
     }
-    .about-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    .about-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     .about-img-overlay {
-      position: absolute; inset: 0;
+      position: absolute;
+      inset: 0;
       background: linear-gradient(to right, transparent 60%, var(--cream) 100%);
     }
 
     .about-content {
       padding: 5rem 4rem 5rem 3rem;
-      display: flex; flex-direction: column; justify-content: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .section-tag {
-      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.16em;
-      text-transform: uppercase; color: var(--terra);
-      margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
-    .section-tag::before { content: ''; display: block; width: 24px; height: 1.5px; background: var(--terra); }
+
+    .section-tag::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--terra);
+    }
 
     .about-content h2 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(1.8rem, 3vw, 2.6rem);
-      font-weight: 700; color: var(--green);
-      line-height: 1.2; margin-bottom: 1.2rem;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
     }
+
     .about-content p {
-      font-size: 0.98rem; line-height: 1.75; color: var(--muted);
-      margin-bottom: 1rem; max-width: 460px;
+      font-size: 0.98rem;
+      line-height: 1.75;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      max-width: 460px;
     }
-    .about-content a { margin-top: 1rem; }
+
+    .about-content a {
+      margin-top: 1rem;
+    }
 
     /* ── PRODUCTS SECTION ── */
     .products-section {
       padding: 6rem 4rem;
-      position: relative; z-index: 2;
+      position: relative;
+      z-index: 2;
       background: var(--white);
     }
 
     .section-header {
-      text-align: center; margin-bottom: 3.5rem;
+      text-align: center;
+      margin-bottom: 3.5rem;
     }
+
     .section-header h2 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--green); margin-bottom: 0.75rem;
+      color: var(--green);
+      margin-bottom: 0.75rem;
     }
-    .section-header p { color: var(--muted); font-size: 1rem; max-width: 520px; margin: 0 auto; line-height: 1.6; }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
 
     .products-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem; max-width: 1100px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     .product-card {
       background: var(--cream);
-      border-radius: 3px; overflow: hidden;
+      border-radius: 3px;
+      overflow: hidden;
       border: 1px solid var(--cream2);
       transition: transform 0.2s, box-shadow 0.2s;
       cursor: pointer;
     }
+
     .product-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(45,74,45,0.12);
+      box-shadow: 0 16px 40px rgba(45, 74, 45, 0.12);
     }
+
     .product-card-img {
-      width: 100%; height: 220px; object-fit: cover;
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
       background: var(--cream2);
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       overflow: hidden;
     }
-    .product-card-img img { width: 100%; height: 100%; object-fit: cover; }
 
-    .product-card-body { padding: 1.4rem 1.5rem 1.6rem; }
-    .product-card-tag {
-      font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--terra); font-weight: 500; margin-bottom: 0.4rem;
+    .product-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
+
+    .product-card-body {
+      padding: 1.4rem 1.5rem 1.6rem;
+    }
+
+    .product-card-tag {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--terra);
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+    }
+
     .product-card-name {
       font-family: 'Playfair Display', serif;
-      font-size: 1.15rem; font-weight: 700;
-      color: var(--green); margin-bottom: 0.5rem;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.5rem;
     }
+
     .product-card-desc {
-      font-size: 0.88rem; color: var(--muted); line-height: 1.6;
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
     }
 
     /* placeholder product image */
     .product-placeholder {
-      width: 100%; height: 220px;
+      width: 100%;
+      height: 220px;
       background: linear-gradient(135deg, var(--cream2) 0%, var(--cream) 100%);
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .product-placeholder svg { width: 64px; height: 64px; opacity: 0.25; }
+
+    .product-placeholder svg {
+      width: 64px;
+      height: 64px;
+      opacity: 0.25;
+    }
 
     /* ── VALUES ── */
     .values-section {
       padding: 6rem 4rem;
       background: var(--green);
-      position: relative; overflow: hidden; z-index: 2;
+      position: relative;
+      overflow: hidden;
+      z-index: 2;
     }
+
     .values-section::before {
       content: '';
-      position: absolute; top: -60px; right: -60px;
-      width: 320px; height: 320px;
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 320px;
+      height: 320px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.04);
+      background: rgba(255, 255, 255, 0.04);
     }
+
     .values-section::after {
       content: '';
-      position: absolute; bottom: -80px; left: 10%;
-      width: 200px; height: 200px;
+      position: absolute;
+      bottom: -80px;
+      left: 10%;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.03);
+      background: rgba(255, 255, 255, 0.03);
     }
 
-    .values-section .section-header h2 { color: var(--cream); }
-    .values-section .section-header p { color: rgba(237,229,208,0.7); }
-    .values-section .section-tag { color: var(--gold-lt); }
-    .values-section .section-tag::before { background: var(--gold-lt); }
+    .values-section .section-header h2 {
+      color: var(--cream);
+    }
+
+    .values-section .section-header p {
+      color: rgba(237, 229, 208, 0.7);
+    }
+
+    .values-section .section-tag {
+      color: var(--gold-lt);
+    }
+
+    .values-section .section-tag::before {
+      background: var(--gold-lt);
+    }
 
     .values-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 2rem; max-width: 960px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 960px;
+      margin: 0 auto;
     }
 
     .value-card {
       padding: 2rem;
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 3px;
       transition: background 0.2s, border-color 0.2s;
     }
+
     .value-card:hover {
-      background: rgba(255,255,255,0.06);
-      border-color: rgba(255,255,255,0.2);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.2);
     }
+
     .value-icon {
-      width: 44px; height: 44px;
-      background: rgba(240,192,64,0.15);
-      border-radius: 2px; margin-bottom: 1.2rem;
-      display: flex; align-items: center; justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: rgba(240, 192, 64, 0.15);
+      border-radius: 2px;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 1.3rem;
     }
+
     .value-card h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.15rem; color: var(--cream);
+      font-size: 1.15rem;
+      color: var(--cream);
       margin-bottom: 0.6rem;
     }
-    .value-card p { font-size: 0.88rem; color: rgba(237,229,208,0.65); line-height: 1.65; }
+
+    .value-card p {
+      font-size: 0.88rem;
+      color: rgba(237, 229, 208, 0.65);
+      line-height: 1.65;
+    }
 
     /* ── CTA BANNER ── */
     .cta-banner {
       padding: 5rem 4rem;
       text-align: center;
       background: var(--cream2);
-      position: relative; z-index: 2;
+      position: relative;
+      z-index: 2;
     }
+
     .cta-banner h2 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-      color: var(--green); margin-bottom: 1rem;
+      color: var(--green);
+      margin-bottom: 1rem;
     }
-    .cta-banner p { color: var(--muted); font-size: 1rem; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+
+    .cta-banner p {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
 
     /* ── FOOTER ── */
     footer {
       background: var(--text);
-      color: rgba(247,242,232,0.7);
+      color: rgba(247, 242, 232, 0.7);
       padding: 3.5rem 4rem 2rem;
-      position: relative; z-index: 2;
+      position: relative;
+      z-index: 2;
     }
+
     .footer-top {
-      display: grid; grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 3rem; padding-bottom: 2.5rem;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       margin-bottom: 1.8rem;
     }
+
     .footer-brand-name {
       font-family: 'Playfair Display', serif;
-      font-size: 1.25rem; color: var(--cream);
+      font-size: 1.25rem;
+      color: var(--cream);
       margin-bottom: 0.75rem;
     }
-    .footer-tagline { font-size: 0.85rem; line-height: 1.65; max-width: 280px; }
+
+    .footer-tagline {
+      font-size: 0.85rem;
+      line-height: 1.65;
+      max-width: 280px;
+    }
+
     .footer-col h4 {
-      font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--cream); margin-bottom: 1rem; font-weight: 500;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 1rem;
+      font-weight: 500;
     }
-    .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 0.55rem; }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.55rem;
+    }
+
     .footer-col ul a {
-      color: rgba(247,242,232,0.6); text-decoration: none;
-      font-size: 0.88rem; transition: color 0.2s;
+      color: rgba(247, 242, 232, 0.6);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
     }
-    .footer-col ul a:hover { color: var(--cream); }
-    .footer-col address { font-style: normal; font-size: 0.88rem; line-height: 1.8; }
-    .footer-col a { color: rgba(247,242,232,0.6); text-decoration: none; transition: color 0.2s; }
-    .footer-col a:hover { color: var(--cream); }
+
+    .footer-col ul a:hover {
+      color: var(--cream);
+    }
+
+    .footer-col address {
+      font-style: normal;
+      font-size: 0.88rem;
+      line-height: 1.8;
+    }
+
+    .footer-col a {
+      color: rgba(247, 242, 232, 0.6);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--cream);
+    }
+
     .footer-bottom {
-      display: flex; align-items: center; justify-content: space-between;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       font-size: 0.78rem;
     }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     @keyframes fadeIn {
-      from { opacity: 0; } to { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
     /* ── SCROLL REVEAL ── */
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      nav { padding: 1rem 1.5rem; }
-      .nav-links { display: none; }
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-right { height: 340px; }
-      .hero-left { padding: 4rem 1.5rem 2rem; }
-      .about-strip { grid-template-columns: 1fr; }
-      .about-img { height: 300px; }
-      .about-content { padding: 3rem 1.5rem; }
-      .products-section { padding: 4rem 1.5rem; }
-      .products-grid { grid-template-columns: 1fr 1fr; }
-      .values-section { padding: 4rem 1.5rem; }
-      .values-grid { grid-template-columns: 1fr; gap: 1rem; }
-      .cta-banner { padding: 4rem 1.5rem; }
-      footer { padding: 3rem 1.5rem 1.5rem; }
-      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-right {
+        height: 340px;
+      }
+
+      .hero-left {
+        padding: 4rem 1.5rem 2rem;
+      }
+
+      .about-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .about-img {
+        height: 300px;
+      }
+
+      .about-content {
+        padding: 3rem 1.5rem;
+      }
+
+      .products-section {
+        padding: 4rem 1.5rem;
+      }
+
+      .products-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .values-section {
+        padding: 4rem 1.5rem;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .cta-banner {
+        padding: 4rem 1.5rem;
+      }
+
+      footer {
+        padding: 3rem 1.5rem 1.5rem;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
     }
 
     @media (max-width: 580px) {
-      .products-grid { grid-template-columns: 1fr; }
-      .hero-stats { gap: 1.5rem; }
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats {
+        gap: 1.5rem;
+      }
     }
 
     /* Remove black backgrounds from product images */
@@ -487,256 +910,271 @@
     }
   </style>
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="index.html" class="nav-logo">
-    <!-- Leaf logo mark -->
-    <svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="17" cy="17" r="17" fill="#2d4a2d"/>
-      <path d="M17 6 C17 6, 27 12, 27 20 C27 25.5 22.5 28 17 28 C17 28, 17 18, 10 14 C13 14, 17 6, 17 6Z" fill="#f0c040"/>
-      <path d="M17 28 L17 15" stroke="#2d4a2d" stroke-width="1.5" stroke-linecap="round"/>
-    </svg>
-    <div class="nav-logo-text">
-      Sunshine Produce
-      <span>Fresh Wholesale Produce</span>
-    </div>
-  </a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="products.html">Products</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
-  </ul>
-</nav>
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <!-- Leaf logo mark -->
+      <svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="17" cy="17" r="17" fill="#2d4a2d" />
+        <path d="M17 6 C17 6, 27 12, 27 20 C27 25.5 22.5 28 17 28 C17 28, 17 18, 10 14 C13 14, 17 6, 17 6Z"
+          fill="#f0c040" />
+        <path d="M17 28 L17 15" stroke="#2d4a2d" stroke-width="1.5" stroke-linecap="round" />
+      </svg>
+      <div class="nav-logo-text">
+        Sunshine Produce
+        <span>Fresh Wholesale Produce</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+  </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-left">
-    <div class="hero-badge">Southern California Wholesale</div>
-    <h1>Farm-Fresh<br/><em>Taro Root</em><br/>& Imported Goods</h1>
-    <p class="hero-sub">
-      Quality produce — peeled, packed, and delivered to your door.
-      Serving SoCal's finest wholesalers and distributors for over 20 years.
-    </p>
-    <div class="hero-actions">
-      <a href="products.html" class="btn-primary">View Our Products</a>
-      <a href="contact.html" class="btn-secondary">Get in Touch</a>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-badge">Southern California Wholesale</div>
+      <h1>Farm-Fresh<br /><em>Taro Root</em><br />& Imported Goods</h1>
+      <p class="hero-sub">
+        Quality produce — peeled, packed, and delivered to your door.
+        Serving SoCal's finest wholesalers and distributors for over 20 years.
+      </p>
+      <div class="hero-actions">
+        <a href="products.html" class="btn-primary">View Our Products</a>
+        <a href="contact.html" class="btn-secondary">Get in Touch</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <span class="hero-stat-num">20+</span>
+          <span class="hero-stat-label">Years Serving SoCal</span>
+        </div>
+        <div>
+          <span class="hero-stat-num">14+</span>
+          <span class="hero-stat-label">Products in Catalog</span>
+        </div>
+        <div>
+          <span class="hero-stat-num">Wholesale</span>
+          <span class="hero-stat-label">Bulk &amp; Delivery Available</span>
+        </div>
+      </div>
     </div>
-    <div class="hero-stats">
+    <div class="hero-right">
+      <!-- Botanical watermark -->
+      <svg class="hero-botanical" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M150 280 C150 280, 60 200, 60 130 C60 70, 100 40, 150 30 C200 40, 240 70, 240 130 C240 200, 150 280, 150 280Z"
+          fill="white" />
+        <path d="M150 280 L150 80" stroke="white" stroke-width="3" opacity="0.6" />
+        <path d="M150 180 C150 180, 100 160, 80 130" stroke="white" stroke-width="2" opacity="0.5" />
+        <path d="M150 160 C150 160, 200 140, 220 110" stroke="white" stroke-width="2" opacity="0.5" />
+        <path d="M150 210 C150 210, 110 195, 95 170" stroke="white" stroke-width="1.5" opacity="0.4" />
+      </svg>
+      <div class="hero-img-stack">
+        <img class="hero-float-img hero-float-main" src="images/taro_hero.png" alt="Fresh peeled taro root" />
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-bar" aria-hidden="true">
+    <div class="marquee-track">
+      <!-- duplicated for seamless loop -->
+      <div class="marquee-item">Fresh Taro Root</div>
+      <div class="marquee-item">Vacuum-Sealed Quality</div>
+      <div class="marquee-item">Wholesale Distribution</div>
+      <div class="marquee-item">Southern California</div>
+      <div class="marquee-item">Imported Vietnamese Goods</div>
+      <div class="marquee-item">Bulk Orders Welcome</div>
+      <div class="marquee-item">Peeled & Chopped</div>
+      <div class="marquee-item">Family-Run Business</div>
+      <div class="marquee-item">Fresh Taro Root</div>
+      <div class="marquee-item">Vacuum-Sealed Quality</div>
+      <div class="marquee-item">Wholesale Distribution</div>
+      <div class="marquee-item">Southern California</div>
+      <div class="marquee-item">Imported Vietnamese Goods</div>
+      <div class="marquee-item">Bulk Orders Welcome</div>
+      <div class="marquee-item">Peeled & Chopped</div>
+      <div class="marquee-item">Family-Run Business</div>
+    </div>
+  </div>
+
+  <!-- ABOUT STRIP -->
+  <section class="about-strip">
+    <div class="about-img">
+      <img src="images/taro_hero.png" alt="Taro root" style="mix-blend-mode: multiply;" />
+      <div class="about-img-overlay"></div>
+    </div>
+    <div class="about-content reveal">
+      <div class="section-tag">Our Story</div>
+      <h2>Rooted in Quality,<br />Built on Trust</h2>
+      <p>Sunshine Produce was built on a simple belief: your customers deserve the freshest produce, delivered with
+        care. We import, peel, chop, and vacuum-seal taro root and other edible goods right here in Southern California.
+      </p>
+      <p>We've spent over 20 years earning the trust of wholesale buyers, distributors, and vendors across the region —
+        and we stand behind every product we ship.</p>
+      <a href="about.html" class="btn-secondary">Learn More About Us</a>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products-section">
+    <div class="section-header reveal">
+      <div class="section-tag" style="justify-content:center;margin-bottom:0.75rem;">What We Carry</div>
+      <h2>Our Products</h2>
+      <p>Wholesale-ready, vacuum-sealed, and shipped at peak freshness. Bulk orders and custom packaging available.</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card reveal reveal-delay-1">
+        <div class="product-card-img">
+          <img src="images/taro_peeled.png" alt="Fresh Peeled Taro Root" style="mix-blend-mode: multiply;" />
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-tag">Bestseller</div>
+          <div class="product-card-name">Fresh Peeled Taro Root</div>
+          <div class="product-card-desc">Peeled, vacuum-sealed, and ready to cook. Available in bulk for wholesale
+            customers.</div>
+        </div>
+      </div>
+      <div class="product-card reveal reveal-delay-2">
+        <div class="product-card-img">
+          <img src="images/IMG_3301.jpg" alt="AKFoods Cashews & Nuts" style="mix-blend-mode: multiply;" />
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-tag">Imported</div>
+          <div class="product-card-name">AKFoods Cashews &amp; Nuts</div>
+          <div class="product-card-desc">A full range of imported roasted cashews and mixed nuts. 9 varieties available
+            wholesale by the box.</div>
+        </div>
+      </div>
+      <div class="product-card reveal reveal-delay-3">
+        <div class="product-card-img">
+          <img src="images/IMG_3299.jpg" alt="Sunsweet Plums" style="mix-blend-mode: multiply;" />
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-tag">Imported</div>
+          <div class="product-card-name">Sunsweet Plums</div>
+          <div class="product-card-desc">Salt-dried Vietnamese plums, a popular specialty snack. Available wholesale by
+            the case.</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3rem;">
+      <a href="products.html" class="btn-primary">View Full Catalog</a>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="values-section">
+    <div class="section-header reveal" style="margin-bottom:3rem;">
+      <div class="section-tag" style="justify-content:center;">Why Sunshine Produce</div>
+      <h2>What Sets Us Apart</h2>
+      <p>We're not just a supplier — we're a partner you can count on.</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal reveal-delay-1">
+        <div class="value-icon">
+          <!-- Leaf / freshness icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f0c040" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22C12 22, 4 16, 4 9C4 5, 7.5 2, 12 2C16.5 2, 20 5, 20 9C20 16, 12 22, 12 22Z" />
+            <line x1="12" y1="22" x2="12" y2="10" />
+            <path d="M12 16 C12 16, 8 14, 6 11" />
+            <path d="M12 13 C12 13, 16 11, 18 8" />
+          </svg>
+        </div>
+        <h3>Peak Freshness</h3>
+        <p>Every batch is peeled, chopped, and vacuum-sealed at the height of freshness — extending shelf life without
+          sacrificing quality.</p>
+      </div>
+      <div class="value-card reveal reveal-delay-2">
+        <div class="value-icon">
+          <!-- Box / fulfillment icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f0c040" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="21 8 21 21 3 21 3 8" />
+            <rect x="1" y="3" width="22" height="5" />
+            <line x1="10" y1="12" x2="14" y2="12" />
+          </svg>
+        </div>
+        <h3>Reliable Fulfillment</h3>
+        <p>We've been fulfilling wholesale orders across Southern California for over 20 years. Consistency you can plan
+          around.</p>
+      </div>
+      <div class="value-card reveal reveal-delay-3">
+        <div class="value-icon">
+          <!-- Handshake / service icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f0c040" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg>
+        </div>
+        <h3>Personal Service</h3>
+        <p>We're a family-run business. We know our customers by name and tailor every order to their needs. No
+          middlemen, no runaround.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner reveal">
+    <h2>Ready to Place a Wholesale Order?</h2>
+    <p>Reach out and we'll get back to you with pricing, availability, and delivery options tailored to your needs.</p>
+    <a href="contact.html" class="btn-primary">Contact Us Today</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
       <div>
-        <span class="hero-stat-num">20+</span>
-        <span class="hero-stat-label">Years Serving SoCal</span>
+        <div class="footer-brand-name">Sunshine Produce</div>
+        <p class="footer-tagline">Fresh produce imported, processed, and delivered across Southern California. Quality
+          you can taste, service you can count on.</p>
       </div>
-      <div>
-        <span class="hero-stat-num">14+</span>
-        <span class="hero-stat-label">Products in Catalog</span>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </div>
-      <div>
-        <span class="hero-stat-num">Wholesale</span>
-        <span class="hero-stat-label">Bulk &amp; Delivery Available</span>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address>
+          <a href="tel:+15628417881">(562) 841-7881</a><br />
+          <a href="mailto:office@sunshineevergreen.com">office@sunshineevergreen.com</a><br />
+          Los Angeles Area, CA
+        </address>
       </div>
     </div>
-  </div>
-  <div class="hero-right">
-    <!-- Botanical watermark -->
-    <svg class="hero-botanical" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M150 280 C150 280, 60 200, 60 130 C60 70, 100 40, 150 30 C200 40, 240 70, 240 130 C240 200, 150 280, 150 280Z" fill="white"/>
-      <path d="M150 280 L150 80" stroke="white" stroke-width="3" opacity="0.6"/>
-      <path d="M150 180 C150 180, 100 160, 80 130" stroke="white" stroke-width="2" opacity="0.5"/>
-      <path d="M150 160 C150 160, 200 140, 220 110" stroke="white" stroke-width="2" opacity="0.5"/>
-      <path d="M150 210 C150 210, 110 195, 95 170" stroke="white" stroke-width="1.5" opacity="0.4"/>
-    </svg>
-    <div class="hero-img-stack">
-      <img class="hero-float-img hero-float-main"
-           src="images/taro_peeled.png"
-           alt="Fresh peeled taro root"/>
-      <img class="hero-float-img hero-float-secondary"
-           src="images/taro_raw.png"
-           alt="Raw taro root"/>
+    <div class="footer-bottom">
+      <span>© 2025 Sunshine Evergreen, Inc. All rights reserved.</span>
+      <span style="color:rgba(247,242,232,0.35);font-size:0.72rem;">Wholesale Produce Distributor · Los Angeles,
+        CA</span>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- MARQUEE -->
-<div class="marquee-bar" aria-hidden="true">
-  <div class="marquee-track">
-    <!-- duplicated for seamless loop -->
-    <div class="marquee-item">Fresh Taro Root</div>
-    <div class="marquee-item">Vacuum-Sealed Quality</div>
-    <div class="marquee-item">Wholesale Distribution</div>
-    <div class="marquee-item">Southern California</div>
-    <div class="marquee-item">Imported Vietnamese Goods</div>
-    <div class="marquee-item">Bulk Orders Welcome</div>
-    <div class="marquee-item">Peeled & Chopped</div>
-    <div class="marquee-item">Family-Run Business</div>
-    <div class="marquee-item">Fresh Taro Root</div>
-    <div class="marquee-item">Vacuum-Sealed Quality</div>
-    <div class="marquee-item">Wholesale Distribution</div>
-    <div class="marquee-item">Southern California</div>
-    <div class="marquee-item">Imported Vietnamese Goods</div>
-    <div class="marquee-item">Bulk Orders Welcome</div>
-    <div class="marquee-item">Peeled & Chopped</div>
-    <div class="marquee-item">Family-Run Business</div>
-  </div>
-</div>
-
-<!-- ABOUT STRIP -->
-<section class="about-strip">
-  <div class="about-img">
-    <img src="images/taro_hero.png" alt="Taro root" style="mix-blend-mode: multiply;"/>
-    <div class="about-img-overlay"></div>
-  </div>
-  <div class="about-content reveal">
-    <div class="section-tag">Our Story</div>
-    <h2>Rooted in Quality,<br/>Built on Trust</h2>
-    <p>Sunshine Produce was built on a simple belief: your customers deserve the freshest produce, delivered with care. We import, peel, chop, and vacuum-seal taro root and other edible goods right here in Southern California.</p>
-    <p>We've spent over 20 years earning the trust of wholesale buyers, distributors, and vendors across the region — and we stand behind every product we ship.</p>
-    <a href="about.html" class="btn-secondary">Learn More About Us</a>
-  </div>
-</section>
-
-<!-- PRODUCTS -->
-<section class="products-section">
-  <div class="section-header reveal">
-    <div class="section-tag" style="justify-content:center;margin-bottom:0.75rem;">What We Carry</div>
-    <h2>Our Products</h2>
-    <p>Wholesale-ready, vacuum-sealed, and shipped at peak freshness. Bulk orders and custom packaging available.</p>
-  </div>
-  <div class="products-grid">
-    <div class="product-card reveal reveal-delay-1">
-      <div class="product-card-img">
-        <img src="images/taro_peeled.png" alt="Fresh Peeled Taro Root" style="mix-blend-mode: multiply;"/>
-      </div>
-      <div class="product-card-body">
-        <div class="product-card-tag">Bestseller</div>
-        <div class="product-card-name">Fresh Peeled Taro Root</div>
-        <div class="product-card-desc">Peeled, vacuum-sealed, and ready to cook. Available in bulk for wholesale customers.</div>
-      </div>
-    </div>
-    <div class="product-card reveal reveal-delay-2">
-      <div class="product-card-img">
-        <img src="images/IMG_3301.jpg" alt="AKFoods Cashews & Nuts" style="mix-blend-mode: multiply;"/>
-      </div>
-      <div class="product-card-body">
-        <div class="product-card-tag">Imported</div>
-        <div class="product-card-name">AKFoods Cashews &amp; Nuts</div>
-        <div class="product-card-desc">A full range of imported roasted cashews and mixed nuts. 9 varieties available wholesale by the box.</div>
-      </div>
-    </div>
-    <div class="product-card reveal reveal-delay-3">
-      <div class="product-card-img">
-        <img src="images/IMG_3299.jpg" alt="Sunsweet Plums" style="mix-blend-mode: multiply;"/>
-      </div>
-      <div class="product-card-body">
-        <div class="product-card-tag">Imported</div>
-        <div class="product-card-name">Sunsweet Plums</div>
-        <div class="product-card-desc">Salt-dried Vietnamese plums, a popular specialty snack. Available wholesale by the case.</div>
-      </div>
-    </div>
-  </div>
-  <div style="text-align:center;margin-top:3rem;">
-    <a href="products.html" class="btn-primary">View Full Catalog</a>
-  </div>
-</section>
-
-<!-- VALUES -->
-<section class="values-section">
-  <div class="section-header reveal" style="margin-bottom:3rem;">
-    <div class="section-tag" style="justify-content:center;">Why Sunshine Produce</div>
-    <h2>What Sets Us Apart</h2>
-    <p>We're not just a supplier — we're a partner you can count on.</p>
-  </div>
-  <div class="values-grid">
-    <div class="value-card reveal reveal-delay-1">
-      <div class="value-icon">
-        <!-- Leaf / freshness icon -->
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f0c040" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 22C12 22, 4 16, 4 9C4 5, 7.5 2, 12 2C16.5 2, 20 5, 20 9C20 16, 12 22, 12 22Z"/>
-          <line x1="12" y1="22" x2="12" y2="10"/>
-          <path d="M12 16 C12 16, 8 14, 6 11"/>
-          <path d="M12 13 C12 13, 16 11, 18 8"/>
-        </svg>
-      </div>
-      <h3>Peak Freshness</h3>
-      <p>Every batch is peeled, chopped, and vacuum-sealed at the height of freshness — extending shelf life without sacrificing quality.</p>
-    </div>
-    <div class="value-card reveal reveal-delay-2">
-      <div class="value-icon">
-        <!-- Box / fulfillment icon -->
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f0c040" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="21 8 21 21 3 21 3 8"/>
-          <rect x="1" y="3" width="22" height="5"/>
-          <line x1="10" y1="12" x2="14" y2="12"/>
-        </svg>
-      </div>
-      <h3>Reliable Fulfillment</h3>
-      <p>We've been fulfilling wholesale orders across Southern California for over 20 years. Consistency you can plan around.</p>
-    </div>
-    <div class="value-card reveal reveal-delay-3">
-      <div class="value-icon">
-        <!-- Handshake / service icon -->
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f0c040" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-        </svg>
-      </div>
-      <h3>Personal Service</h3>
-      <p>We're a family-run business. We know our customers by name and tailor every order to their needs. No middlemen, no runaround.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CTA BANNER -->
-<section class="cta-banner reveal">
-  <h2>Ready to Place a Wholesale Order?</h2>
-  <p>Reach out and we'll get back to you with pricing, availability, and delivery options tailored to your needs.</p>
-  <a href="contact.html" class="btn-primary">Contact Us Today</a>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-top">
-    <div>
-      <div class="footer-brand-name">Sunshine Produce</div>
-      <p class="footer-tagline">Fresh produce imported, processed, and delivered across Southern California. Quality you can taste, service you can count on.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Navigate</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <address>
-        <a href="tel:+15628417881">(562) 841-7881</a><br/>
-        <a href="mailto:office@sunshineevergreen.com">office@sunshineevergreen.com</a><br/>
-        Los Angeles Area, CA
-      </address>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 Sunshine Evergreen, Inc. All rights reserved.</span>
-    <span style="color:rgba(247,242,232,0.35);font-size:0.72rem;">Wholesale Produce Distributor · Los Angeles, CA</span>
-  </div>
-</footer>
-
-<script>
-  // Scroll reveal
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  window.addEventListener('load', () => {
-    document.querySelectorAll('.reveal').forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight) el.classList.add('visible');
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.reveal').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) el.classList.add('visible');
+      });
     });
-  });
-</script>
+  </script>
 </body>
+
 </html>
