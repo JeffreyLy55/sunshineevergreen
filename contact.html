@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact — Sunshine Produce</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 34 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='17' cy='17' r='17' fill='%232d4a2d'/%3E%3Cpath d='M17 6 C17 6%2C 27 12%2C 27 20 C27 25.5 22.5 28 17 28 C17 28%2C 17 18%2C 10 14 C13 14%2C 17 6%2C 17 6Z' fill='%23f0c040'/%3E%3Cpath d='M17 28 L17 15' stroke='%232d4a2d' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E"/>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 34 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='17' cy='17' r='17' fill='%232d4a2d'/%3E%3Cpath d='M17 6 C17 6%2C 27 12%2C 27 20 C27 25.5 22.5 28 17 28 C17 28%2C 17 18%2C 10 14 C13 14%2C 17 6%2C 17 6Z' fill='%23f0c040'/%3E%3Cpath d='M17 28 L17 15' stroke='%232d4a2d' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E"/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -181,7 +183,7 @@
             <div class="contact-method-value">(562) 841-7881</div>
           </div>
         </a>
-        <a href="mailto:office@sunshineevergreen.com" class="contact-method">
+        <a href="/cdn-cgi/l/email-protection#80efe6e6e9e3e5c0f3f5eef3e8e9eee5e5f6e5f2e7f2e5e5eeaee3efed" class="contact-method">
           <div class="contact-method-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -190,7 +192,7 @@
           </div>
           <div>
             <div class="contact-method-label">Email</div>
-            <div class="contact-method-value">office@sunshineevergreen.com</div>
+            <div class="contact-method-value"><span class="__cf_email__" data-cfemail="49262f2f202a2c093a3c273a2120272c2c3f2c3b2e3b2c2c27672a2624">[email&#160;protected]</span></div>
           </div>
         </a>
         <div class="contact-method" style="cursor:default;">
@@ -290,7 +292,7 @@
       <h4>Contact</h4>
       <address>
         <a href="tel:+15628417881">(562) 841-7881</a><br/>
-        <a href="mailto:office@sunshineevergreen.com">office@sunshineevergreen.com</a><br/>
+        <a href="/cdn-cgi/l/email-protection#0a656c6c63696f4a797f64796263646f6f7c6f786d786f6f6424696567"><span class="__cf_email__" data-cfemail="e78881818e8482a7949289948f8e8982829182958095828289c984888a">[email&#160;protected]</span></a><br/>
         Los Angeles Area, CA
       </address>
     </div>
@@ -301,22 +303,10 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
   function handleSubmit() {
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    if (!email || !message) {
-      alert('Please fill in at least your email and message before sending.');
-      return;
-    }
-    document.getElementById('contactForm').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
-  }
-</script>
-</body>
-</html>
