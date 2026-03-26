@@ -421,6 +421,47 @@
       padding: 0 1rem;
     }
 
+    /* ── MARQUEE ── */
+    .marquee-bar {
+      background: var(--gold);
+      color: var(--text);
+      padding: 0.75rem 0;
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 0;
+      animation: marquee 28s linear infinite;
+      width: max-content;
+    }
+
+    .marquee-item {
+      white-space: nowrap;
+      padding: 0 2.5rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .marquee-item::after {
+      content: '✦';
+      color: var(--text);
+      font-size: 0.55rem;
+      opacity: 0.5;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
     /* ── ABOUT STRIP ── */
     .about-strip {
       display: grid;
@@ -1008,6 +1049,28 @@
       </div>
     </div>
   </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-bar">
+    <div class="marquee-track">
+      <div class="marquee-item">Fresh Taro Root</div>
+      <div class="marquee-item">Family-Owned Since Early 2000s</div>
+      <div class="marquee-item">In-House Processing</div>
+      <div class="marquee-item">LA + Orange County Delivery</div>
+      <div class="marquee-item">Direct Import</div>
+      <div class="marquee-item">Vacuum-Sealed Quality</div>
+      <div class="marquee-item">Wholesale Only</div>
+      <div class="marquee-item">FDA Registered Facility</div>
+      <div class="marquee-item">Fresh Taro Root</div>
+      <div class="marquee-item">Family-Owned Since Early 2000s</div>
+      <div class="marquee-item">In-House Processing</div>
+      <div class="marquee-item">LA + Orange County Delivery</div>
+      <div class="marquee-item">Direct Import</div>
+      <div class="marquee-item">Vacuum-Sealed Quality</div>
+      <div class="marquee-item">Wholesale Only</div>
+      <div class="marquee-item">FDA Registered Facility</div>
+    </div>
+  </div>
 
   <!-- ABOUT STRIP -->
   <section class="about-strip">
