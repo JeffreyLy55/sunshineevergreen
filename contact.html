@@ -321,6 +321,26 @@
     });
   });
 
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        alert('Something went wrong. Please try again or email us directly.');
+      }
+    } catch {
+      alert('Something went wrong. Please try again or email us directly.');
+    }
+  });
 
 </script>
 </body>
