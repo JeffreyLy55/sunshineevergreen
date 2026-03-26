@@ -177,14 +177,15 @@
       padding: 5rem 3rem 5rem 4rem;
       position: relative;
       z-index: 2;
+      background: var(--green);
     }
 
     .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: var(--gold-lt);
-      color: var(--text);
+      background: rgba(255,255,255,0.1);
+      color: rgba(237,229,208,0.9);
       font-size: 0.72rem;
       font-weight: 500;
       letter-spacing: 0.12em;
@@ -198,7 +199,7 @@
 
     .hero-badge::before {
       content: '✦';
-      color: var(--gold);
+      color: var(--gold-lt);
       font-size: 0.65rem;
     }
 
@@ -207,30 +208,67 @@
       font-size: clamp(2.8rem, 5vw, 4.2rem);
       font-weight: 700;
       line-height: 1.1;
-      color: var(--green);
+      color: var(--cream);
       margin-bottom: 1.5rem;
       animation: fadeUp 0.6s 0.1s ease both;
     }
 
     .hero h1 em {
       font-style: italic;
-      color: var(--terra);
+      color: var(--gold-lt);
     }
 
     .hero-sub {
       font-size: 1.05rem;
       line-height: 1.7;
-      color: var(--muted);
+      color: rgba(237,229,208,0.72);
       max-width: 440px;
       margin-bottom: 2.5rem;
       animation: fadeUp 0.6s 0.2s ease both;
     }
 
-    .hero-actions {
+    .hero-phone-cta {
       display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 0.3rem;
+      margin-bottom: 1rem;
       animation: fadeUp 0.6s 0.3s ease both;
+    }
+
+    .hero-phone-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(237,229,208,0.55);
+      font-weight: 500;
+    }
+
+    .hero-phone-number {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--gold-lt);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+      line-height: 1.1;
+    }
+
+    .hero-phone-number:hover {
+      color: var(--cream);
+    }
+
+    .hero-text-link {
+      font-size: 0.88rem;
+      color: rgba(237,229,208,0.6);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+      animation: fadeUp 0.6s 0.35s ease both;
+    }
+
+    .hero-text-link:hover {
+      color: var(--cream);
     }
 
     .btn-primary {
@@ -295,7 +333,7 @@
       gap: 2.5rem;
       margin-top: 3.5rem;
       padding-top: 2rem;
-      border-top: 1px solid var(--cream2);
+      border-top: 1px solid rgba(255,255,255,0.12);
       animation: fadeUp 0.6s 0.4s ease both;
     }
 
@@ -303,13 +341,13 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.9rem;
       font-weight: 700;
-      color: var(--green);
+      color: var(--cream);
       display: block;
     }
 
     .hero-stat-label {
       font-size: 0.78rem;
-      color: var(--muted);
+      color: rgba(237,229,208,0.55);
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
@@ -369,48 +407,18 @@
       transform: rotate(4deg);
     }
 
-    /* ── MARQUEE ── */
-    .marquee-bar {
-      background: var(--green);
-      color: var(--cream);
-      padding: 0.75rem 0;
-      overflow: hidden;
-      position: relative;
-      z-index: 2;
-    }
-
-    .marquee-track {
-      display: flex;
-      gap: 0;
-      animation: marquee 22s linear infinite;
-      width: max-content;
-    }
-
-    .marquee-item {
-      white-space: nowrap;
-      padding: 0 2.5rem;
-      font-size: 0.78rem;
-      letter-spacing: 0.14em;
+    .hero-trust-line {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.3);
       text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-    }
-
-    .marquee-item::after {
-      content: '✦';
-      color: var(--gold-lt);
-      font-size: 0.6rem;
-    }
-
-    @keyframes marquee {
-      from {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(-50%);
-      }
+      z-index: 4;
+      padding: 0 1rem;
     }
 
     /* ── ABOUT STRIP ── */
@@ -958,27 +966,28 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-left">
-      <div class="hero-badge">Southern California Wholesale</div>
-      <h1>Farm-Fresh<br /><em>Taro Root</em><br />& Imported Goods</h1>
+      <div class="hero-badge">Family-Owned · Est. Early 2000s · Wholesale Only</div>
+      <h1>Southern California's<br />Wholesale Source for<br /><em>Fresh Taro Root</em></h1>
       <p class="hero-sub">
-        Wholesale importer and distributor of fresh taro root, specialty produce, and imported goods. Serving Asian grocery stores and wholesale distributors across Southern California.
+        We import, process, and distribute fresh taro root and specialty imported goods to Asian grocery stores and wholesale distributors across LA and Orange County. Family-owned and operated for over 20 years.
       </p>
-      <div class="hero-actions">
-        <a href="contact.html" class="btn-gold">Request a Quote</a>
-        <a href="products.html" class="btn-secondary">View Our Products</a>
+      <div class="hero-phone-cta">
+        <span class="hero-phone-label">Call to place an order</span>
+        <a href="tel:+15628417881" class="hero-phone-number">(562) 841-7881</a>
       </div>
+      <a href="contact.html" class="hero-text-link">or send a quote request &rarr;</a>
       <div class="hero-stats">
         <div>
           <span class="hero-stat-num">20+</span>
-          <span class="hero-stat-label">Years Serving SoCal</span>
+          <span class="hero-stat-label">Years in Business</span>
         </div>
         <div>
-          <span class="hero-stat-num">14+</span>
-          <span class="hero-stat-label">Products in Catalog</span>
+          <span class="hero-stat-num">LA + OC</span>
+          <span class="hero-stat-label">Distribution Area</span>
         </div>
         <div>
           <span class="hero-stat-num">Wholesale</span>
-          <span class="hero-stat-label">Bulk &amp; Delivery Available</span>
+          <span class="hero-stat-label">Orders Only</span>
         </div>
       </div>
     </div>
@@ -995,32 +1004,10 @@
       </svg>
       <div class="hero-img-stack">
         <img class="hero-float-img hero-float-main" src="images/taro_float.png" alt="Fresh peeled taro root" />
+        <div class="hero-trust-line">U.S. FDA Registered Food Facility No. 15836289308</div>
       </div>
     </div>
   </section>
-
-  <!-- MARQUEE -->
-  <div class="marquee-bar" aria-hidden="true">
-    <div class="marquee-track">
-      <!-- duplicated for seamless loop -->
-      <div class="marquee-item">Fresh Taro Root</div>
-      <div class="marquee-item">Vacuum-Sealed Quality</div>
-      <div class="marquee-item">Wholesale Distribution</div>
-      <div class="marquee-item">Southern California</div>
-      <div class="marquee-item">Imported Vietnamese Goods</div>
-      <div class="marquee-item">Bulk Orders Welcome</div>
-      <div class="marquee-item">Peeled & Chopped</div>
-      <div class="marquee-item">Family-Run Business</div>
-      <div class="marquee-item">Fresh Taro Root</div>
-      <div class="marquee-item">Vacuum-Sealed Quality</div>
-      <div class="marquee-item">Wholesale Distribution</div>
-      <div class="marquee-item">Southern California</div>
-      <div class="marquee-item">Imported Vietnamese Goods</div>
-      <div class="marquee-item">Bulk Orders Welcome</div>
-      <div class="marquee-item">Peeled & Chopped</div>
-      <div class="marquee-item">Family-Run Business</div>
-    </div>
-  </div>
 
   <!-- ABOUT STRIP -->
   <section class="about-strip">
