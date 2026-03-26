@@ -47,7 +47,14 @@
     .section-tag { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-lt); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
     .section-tag::before { content: ''; display: block; width: 24px; height: 1.5px; background: var(--gold-lt); }
     .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 3.8rem); font-weight: 700; color: var(--cream); line-height: 1.1; margin-bottom: 1rem; }
-    .page-header p { font-size: 1rem; color: rgba(237,229,208,0.75); line-height: 1.7; max-width: 520px; }
+    .page-header p { font-size: 1rem; color: rgba(237,229,208,0.75); line-height: 1.7; max-width: 560px; }
+
+    /* STATS BAR */
+    .stats-bar { display: flex; justify-content: center; background: var(--text); position: relative; z-index: 2; }
+    .stats-bar-item { flex: 1; text-align: center; padding: 2.5rem 1.5rem; border-right: 1px solid rgba(255,255,255,0.08); max-width: 280px; }
+    .stats-bar-item:last-child { border-right: none; }
+    .stats-bar-num { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--cream); display: block; margin-bottom: 0.3rem; }
+    .stats-bar-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(237,229,208,0.55); }
 
     /* STORY SECTION */
     .story-section { padding: 6rem 4rem; position: relative; z-index: 2; }
@@ -71,15 +78,6 @@
       mix-blend-mode: multiply;
       filter: drop-shadow(0 12px 30px rgba(0,0,0,0.15));
     }
-    .story-accent-card {
-      position: absolute; bottom: -2rem; right: -2rem;
-      background: var(--gold-lt); padding: 1.5rem 2rem;
-      border-radius: 3px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-    }
-    .story-accent-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; color: var(--text); line-height: 1; }
-    .story-accent-label { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); opacity: 0.7; margin-top: 0.25rem; }
-
     .story-content .section-tag { color: var(--terra); }
     .story-content .section-tag::before { background: var(--terra); }
     .story-content h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; color: var(--green); line-height: 1.2; margin-bottom: 1.5rem; }
@@ -92,21 +90,24 @@
     .process-section .section-header .section-tag::before { background: var(--terra); }
     .process-section .section-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--green); margin-bottom: 0.75rem; }
     .process-section .section-header p { color: var(--muted); font-size: 1rem; max-width: 520px; margin: 0 auto; line-height: 1.6; }
-
     .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-width: 1100px; margin: 0 auto; position: relative; }
     .process-steps::before { content: ''; position: absolute; top: 28px; left: calc(12.5% + 1px); right: calc(12.5% + 1px); height: 1px; background: var(--cream2); z-index: 0; }
     .process-step { text-align: center; padding: 0 1.5rem; position: relative; z-index: 1; }
-    .process-step-num {
-      width: 56px; height: 56px; border-radius: 50%;
-      background: var(--cream); border: 2px solid var(--cream2);
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 1.5rem;
-      font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--green);
-      transition: background 0.2s, border-color 0.2s;
-    }
+    .process-step-num { width: 56px; height: 56px; border-radius: 50%; background: var(--cream); border: 2px solid var(--cream2); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--green); transition: background 0.2s, border-color 0.2s; }
     .process-step:hover .process-step-num { background: var(--green); border-color: var(--green); color: var(--white); }
     .process-step h4 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--green); margin-bottom: 0.5rem; }
     .process-step p { font-size: 0.84rem; color: var(--muted); line-height: 1.6; }
+
+    /* WHO WE WORK WITH */
+    .who-section { padding: 6rem 4rem; background: var(--cream); position: relative; z-index: 2; }
+    .who-section-inner { max-width: 680px; margin: 0 auto; }
+    .who-section .section-tag { color: var(--terra); }
+    .who-section .section-tag::before { background: var(--terra); }
+    .who-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--green); margin-bottom: 1.2rem; }
+    .who-section p { font-size: 0.97rem; line-height: 1.78; color: var(--muted); margin-bottom: 1rem; }
+    .who-list { list-style: none; margin: 0.5rem 0 1.5rem; padding: 0; }
+    .who-list li { font-size: 0.97rem; color: var(--muted); line-height: 1.78; padding: 0.4rem 0 0.4rem 1.4rem; position: relative; }
+    .who-list li::before { content: ''; position: absolute; left: 0; top: 50%; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; transform: translateY(-50%); }
 
     /* VALUES STRIP */
     .values-strip { padding: 6rem 4rem; background: var(--cream2); position: relative; z-index: 2; }
@@ -121,6 +122,14 @@
     .value-item-icon svg { color: var(--green); }
     .value-item h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--green); margin-bottom: 0.4rem; }
     .value-item p { font-size: 0.86rem; color: var(--muted); line-height: 1.65; }
+
+    /* WHERE WE OPERATE */
+    .operate-section { padding: 6rem 4rem; background: var(--white); position: relative; z-index: 2; }
+    .operate-inner { max-width: 680px; margin: 0 auto; }
+    .operate-section .section-tag { color: var(--terra); }
+    .operate-section .section-tag::before { background: var(--terra); }
+    .operate-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--green); margin-bottom: 1.2rem; }
+    .operate-section p { font-size: 0.97rem; line-height: 1.78; color: var(--muted); margin-bottom: 1rem; }
 
     /* CTA */
     .cta-banner { padding: 5rem 4rem; text-align: center; background: var(--green); position: relative; z-index: 2; }
@@ -154,14 +163,17 @@
     @media (max-width: 900px) {
       nav { padding: 1rem 1.5rem; } .nav-links { display: none; }
       .page-header { padding: 7rem 1.5rem 4rem; }
+      .stats-bar { flex-wrap: wrap; }
+      .stats-bar-item { flex: 1 1 50%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
       .story-section { padding: 4rem 1.5rem; }
       .story-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .story-accent-card { right: 0; bottom: -1.5rem; }
       .process-section { padding: 4rem 1.5rem; }
       .process-steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
       .process-steps::before { display: none; }
+      .who-section { padding: 4rem 1.5rem; }
       .values-strip { padding: 4rem 1.5rem; }
       .values-list { grid-template-columns: 1fr; }
+      .operate-section { padding: 4rem 1.5rem; }
       .cta-banner { padding: 4rem 1.5rem; }
       footer { padding: 3rem 1.5rem 1.5rem; }
       .footer-top { grid-template-columns: 1fr; gap: 2rem; }
@@ -193,30 +205,43 @@
 <header class="page-header">
   <div class="page-header-inner">
     <div class="section-tag">Our Story</div>
-    <h1>A Family Business<br/>Built on Freshness</h1>
-    <p>Sunshine Produce has been importing, processing, and delivering fresh taro root and edible goods to Southern California's wholesale market for over 20 years.</p>
+    <h1>A Family Business,<br/>Built from the Ground Up</h1>
+    <p>Sunshine Produce is a family-owned wholesale importer, processor, and distributor based in the Los Angeles area. We've been bringing fresh taro root and specialty imported goods to Southern California's wholesale market for over 20 years, handling everything from customs clearance to in-house processing to last-mile delivery.</p>
   </div>
 </header>
+
+<div class="stats-bar">
+  <div class="stats-bar-item reveal">
+    <span class="stats-bar-num">20+</span>
+    <span class="stats-bar-label">Years in Business</span>
+  </div>
+  <div class="stats-bar-item reveal reveal-delay-1">
+    <span class="stats-bar-num">Est. Early 2000s</span>
+    <span class="stats-bar-label">Founded</span>
+  </div>
+  <div class="stats-bar-item reveal reveal-delay-2">
+    <span class="stats-bar-num">4</span>
+    <span class="stats-bar-label">Steps, Farm to Door</span>
+  </div>
+  <div class="stats-bar-item reveal reveal-delay-3">
+    <span class="stats-bar-num">SoCal</span>
+    <span class="stats-bar-label">Distribution Area</span>
+  </div>
+</div>
 
 <section class="story-section">
   <div class="story-grid">
     <div class="story-visual reveal">
       <div class="story-img-main">
-        <img src="images/taro_hero.png" alt="Taro root" style="width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;border-radius:3px;"/>
-      </div>
-      <div class="story-accent-card">
-        <div class="story-accent-num">20+</div>
-        <div class="story-accent-label">Years in Business</div>
-        <div class="story-accent-num" style="margin-top:1rem;">SoCal</div>
-        <div class="story-accent-label">Distribution Area</div>
+        <img src="images/taro_hero.png" alt="Taro root"/>
       </div>
     </div>
     <div class="story-content reveal reveal-delay-1">
       <div class="section-tag">Who We Are</div>
-      <h2>Rooted in Quality,<br/>Built on Trust</h2>
-      <p>Sunshine Produce started with a straightforward idea: bring high-quality taro root and imported Vietnamese produce to Southern California's wholesale market — and do it with the personal touch that larger distributors can't offer.</p>
-      <p>We're a family-run operation based in the Los Angeles area. We handle every step in-house: importing, peeling, chopping, vacuum-sealing, and delivering. That means full control over quality at every stage — and a team that stands behind every order we ship.</p>
-      <p>Over 20 years in, our customers keep coming back because they know what to expect: consistent product, honest pricing, and a team that picks up the phone.</p>
+      <h2>Who We Are</h2>
+      <p>Sunshine Produce was started by our family in the early 2000s with a simple goal: bring consistently processed taro root and hard-to-source imported goods to Southern California's wholesale market, and do it with the kind of reliability that larger distributors rarely offer.</p>
+      <p>We're a family operation. The people who answer the phone are the same people who manage your account, oversee processing, and know your order history. There's no call center, no ticket system, and no runaround.</p>
+      <p>Today we supply Asian grocery stores and wholesale distributors across Los Angeles and Orange County. Our customers come back because they know what to expect from us: consistent product, honest communication, and a team that takes accountability seriously.</p>
     </div>
   </div>
 </section>
@@ -224,63 +249,90 @@
 <section class="process-section">
   <div class="section-header reveal">
     <div class="section-tag">How It Works</div>
-    <h2>From Source to Your Door</h2>
+    <h2>What We Do</h2>
     <p>We manage the full supply chain so you don't have to worry about it.</p>
   </div>
   <div class="process-steps">
     <div class="process-step reveal reveal-delay-1">
       <div class="process-step-num">01</div>
       <h4>Import</h4>
-      <p>We source taro root and edible goods directly from trusted overseas suppliers.</p>
+      <p>We source taro root and specialty imported goods directly from overseas suppliers, managing customs brokerage in-house. That means no third-party freight forwarder delays and direct accountability for every shipment.</p>
     </div>
     <div class="process-step reveal reveal-delay-2">
       <div class="process-step-num">02</div>
       <h4>Process</h4>
-      <p>Produce is peeled, chopped, and prepared in-house at our Los Angeles area facility.</p>
+      <p>Produce is peeled, chopped, and prepared at our Los Angeles area facility. We don't just pass product through, we process it. That's a meaningful difference for buyers who need consistent cut sizes and ready-to-use product.</p>
     </div>
     <div class="process-step reveal reveal-delay-3">
       <div class="process-step-num">03</div>
       <h4>Pack</h4>
-      <p>Everything is vacuum-sealed for freshness and packed to your order specifications.</p>
+      <p>Everything is vacuum-sealed in-house for extended shelf life and packed to order specifications. Vacuum sealing preserves freshness without additives or preservatives.</p>
     </div>
     <div class="process-step reveal reveal-delay-4">
       <div class="process-step-num">04</div>
       <h4>Deliver</h4>
-      <p>Orders go out to wholesale customers and distributors across Southern California.</p>
+      <p>Orders go out to wholesale accounts across Los Angeles, Orange County, and surrounding Southern California counties. We deliver on a regular schedule and work with customers to accommodate order timing.</p>
     </div>
+  </div>
+</section>
+
+<section class="who-section">
+  <div class="who-section-inner reveal">
+    <div class="section-tag">Our Customers</div>
+    <h2>Who We Work With</h2>
+    <p>We sell wholesale only. Our customers include:</p>
+    <ul class="who-list">
+      <li>Asian grocery stores and supermarkets</li>
+      <li>Wholesale distributors and redistributors</li>
+    </ul>
+    <p>If you're a business looking for a reliable source of fresh taro root, vacuum-sealed produce, or specialty imported snacks and goods, we'd like to hear from you.</p>
+    <a href="contact.html" class="btn-gold" style="margin-top:1.5rem;">Request a Quote</a>
   </div>
 </section>
 
 <section class="values-strip">
   <div class="values-strip-inner">
-    <div class="section-tag reveal">What We Stand For</div>
-    <h2 class="reveal">Our Commitments</h2>
+    <div class="section-tag reveal">Our Standards</div>
+    <h2 class="reveal">What You Can Count On</h2>
     <div class="values-list">
       <div class="value-item reveal reveal-delay-1">
         <div class="value-item-icon">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22C12 22,4 16,4 9C4 5,7.5 2,12 2C16.5 2,20 5,20 9C20 16,12 22,12 22Z"/>
-            <line x1="12" y1="22" x2="12" y2="10"/>
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
           </svg>
         </div>
         <div>
-          <h4>Freshness First</h4>
-          <p>Every product leaves our facility at peak quality. Vacuum-sealing extends shelf life without compromising taste or texture.</p>
+          <h4>Consistent Product</h4>
+          <p>Taro root size, cut, and vacuum seal quality are standardized across every order. If something is off, we hear about it and fix it. We've been at this long enough to know that consistency is what keeps accounts.</p>
         </div>
       </div>
       <div class="value-item reveal reveal-delay-2">
         <div class="value-item-icon">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="1" y="3" width="22" height="5"/><polyline points="21 8 21 21 3 21 3 8"/>
-            <line x1="10" y1="12" x2="14" y2="12"/>
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <line x1="3" y1="9" x2="21" y2="9"/>
+            <line x1="9" y1="21" x2="9" y2="9"/>
           </svg>
         </div>
         <div>
-          <h4>Reliable Supply</h4>
-          <p>We maintain consistent stock levels and clear communication so your business never gets caught short.</p>
+          <h4>In-House Processing</h4>
+          <p>We don't outsource peeling, chopping, or packing. Everything happens at our facility, which means we control quality at every step and can respond quickly when something needs to change.</p>
         </div>
       </div>
       <div class="value-item reveal reveal-delay-3">
+        <div class="value-item-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </div>
+        <div>
+          <h4>Direct Import</h4>
+          <p>We handle our own customs brokerage. That gives us more control over supply chain timing than distributors who rely on third-party logistics, and it means we can give you accurate information about product availability and lead times.</p>
+        </div>
+      </div>
+      <div class="value-item reveal reveal-delay-4">
         <div class="value-item-icon">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
@@ -290,29 +342,28 @@
           </svg>
         </div>
         <div>
-          <h4>Personal Relationships</h4>
-          <p>We know our customers by name. When you call, you reach someone who knows your account and can actually help.</p>
-        </div>
-      </div>
-      <div class="value-item reveal reveal-delay-4">
-        <div class="value-item-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-          </svg>
-        </div>
-        <div>
-          <h4>End-to-End Control</h4>
-          <p>From customs and importing to processing and delivery — we own every step, so quality never slips through the cracks.</p>
+          <h4>People, Not Systems</h4>
+          <p>When you call us, you reach someone who knows your account. We're a small team by design. That's not a limitation, it's how we stay accountable to the customers who have been with us for years.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<section class="operate-section">
+  <div class="operate-inner reveal">
+    <div class="section-tag">Coverage</div>
+    <h2>Where We Operate</h2>
+    <p>We deliver to wholesale accounts across Los Angeles County, Orange County, and surrounding Southern California counties. We do not offer retail or consumer sales, all orders are wholesale only.</p>
+    <p>To discuss delivery to your area, reach out directly.</p>
+  </div>
+</section>
+
 <section class="cta-banner reveal">
-  <h2>Let's Work Together</h2>
-  <p>Whether you're a new customer or a long-time partner, we'd love to hear from you. Reach out to discuss your needs.</p>
-  <a href="contact.html" class="btn-gold">Get in Touch</a>
+  <h2>Ready to Place an Order?</h2>
+  <p>Whether you're an existing account or looking to establish a new wholesale relationship, contact us to discuss your needs, pricing, and delivery schedule.</p>
+  <a href="contact.html" class="btn-gold">Request a Quote</a>
+  <p style="margin-top:1.2rem;font-size:0.88rem;color:rgba(237,229,208,0.6);">Call us directly: (562) 841-7881</p>
 </section>
 
 <footer>
@@ -335,8 +386,9 @@
       <address>
         <a href="tel:+15628417881">(562) 841-7881</a><br/>
         <a href="mailto:office@sunshineevergreen.com">office@sunshineevergreen.com</a><br/>
-        Los Angeles Area, CA
+        Serving Los Angeles County, Orange County, and surrounding Southern California counties. Wholesale only.
       </address>
+      <p style="font-size:0.75rem;color:rgba(247,242,232,0.4);margin-top:0.75rem;line-height:1.5;">U.S. FDA Registered Food Facility No. 15836289308</p>
     </div>
   </div>
   <div class="footer-bottom">
