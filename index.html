@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sunshine Produce — Fresh Wholesale Produce, Southern California</title>
   <link rel="icon" type="image/svg+xml" href="/images/logo.svg">
-    href="data:image/svg+xml,%3Csvg viewBox='0 0 34 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='17' cy='17' r='17' fill='%232d4a2d'/%3E%3Cpath d='M17 6 C17 6%2C 27 12%2C 27 20 C27 25.5 22.5 28 17 28 C17 28%2C 17 18%2C 10 14 C13 14%2C 17 6%2C 17 6Z' fill='%23f0c040'/%3E%3Cpath d='M17 28 L17 15' stroke='%232d4a2d' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet"
@@ -16,150 +15,8 @@
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500&display=swap" />
   </noscript>
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --cream: #f7f2e8;
-      --cream2: #ede5d0;
-      --green: #2d4a2d;
-      --green2: #3e6b3e;
-      --gold: #c8930a;
-      --gold-lt: #f0c040;
-      --terra: #b85c38;
-      --text: #1e2a1e;
-      --muted: #6b7c6b;
-      --white: #ffffff;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--cream);
-      color: var(--text);
-      overflow-x: hidden;
-    }
-
-    /* ── Texture overlay ── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.5;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.1rem 4rem;
-      background: rgba(247, 242, 232, 0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--cream2);
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      text-decoration: none;
-    }
-
-    .nav-logo svg {
-      width: 34px;
-      height: 34px;
-    }
-
-    .nav-logo-text {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--green);
-      line-height: 1.1;
-    }
-
-    .nav-logo-text span {
-      display: block;
-      font-size: 0.6rem;
-      font-weight: 300;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      font-family: 'DM Sans', sans-serif;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text);
-      font-size: 0.88rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      position: relative;
-      padding-bottom: 2px;
-      transition: color 0.2s;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 1.5px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.25s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--green);
-    }
-
-    .nav-links a:hover::after {
-      transform: scaleX(1);
-    }
-
-    .nav-cta {
-      background: var(--green);
-      color: var(--white) !important;
-      padding: 0.55rem 1.3rem !important;
-      border-radius: 2px;
-      transition: background 0.2s !important;
-    }
-
-    .nav-cta:hover {
-      background: var(--green2) !important;
-    }
-
-    .nav-cta::after {
-      display: none !important;
-    }
-
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
@@ -184,8 +41,8 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(255,255,255,0.1);
-      color: rgba(237,229,208,0.9);
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(237, 229, 208, 0.9);
       font-size: 0.72rem;
       font-weight: 500;
       letter-spacing: 0.12em;
@@ -221,7 +78,7 @@
     .hero-sub {
       font-size: 1.05rem;
       line-height: 1.7;
-      color: rgba(237,229,208,0.72);
+      color: rgba(237, 229, 208, 0.72);
       max-width: 440px;
       margin-bottom: 2.5rem;
       animation: fadeUp 0.6s 0.2s ease both;
@@ -239,7 +96,7 @@
       font-size: 0.72rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: rgba(237,229,208,0.55);
+      color: rgba(237, 229, 208, 0.55);
       font-weight: 500;
     }
 
@@ -254,86 +111,25 @@
       line-height: 1.1;
     }
 
-    .hero-phone-number:hover {
-      color: var(--cream);
-    }
+    .hero-phone-number:hover { color: var(--cream); }
 
     .hero-text-link {
       font-size: 0.88rem;
-      color: rgba(237,229,208,0.6);
+      color: rgba(237, 229, 208, 0.6);
       text-decoration: none;
       letter-spacing: 0.04em;
       transition: color 0.2s;
       animation: fadeUp 0.6s 0.35s ease both;
     }
 
-    .hero-text-link:hover {
-      color: var(--cream);
-    }
-
-    .btn-primary {
-      background: var(--green);
-      color: var(--white);
-      padding: 0.85rem 2rem;
-      border-radius: 2px;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.9rem;
-      letter-spacing: 0.04em;
-      transition: background 0.2s, transform 0.15s;
-      display: inline-block;
-    }
-
-    .btn-primary:hover {
-      background: var(--green2);
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--green);
-      padding: 0.85rem 2rem;
-      border-radius: 2px;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.9rem;
-      border: 1.5px solid var(--green);
-      letter-spacing: 0.04em;
-      transition: background 0.2s, color 0.2s, transform 0.15s;
-      display: inline-block;
-    }
-
-    .btn-secondary:hover {
-      background: var(--green);
-      color: var(--white);
-      transform: translateY(-1px);
-    }
-
-    .btn-gold {
-      background: var(--gold);
-      color: var(--white);
-      padding: 0.85rem 2rem;
-      border-radius: 2px;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.9rem;
-      letter-spacing: 0.04em;
-      transition: background 0.2s, transform 0.15s;
-      display: inline-block;
-    }
-
-    .btn-gold:hover {
-      background: var(--gold-lt);
-      color: var(--text);
-      transform: translateY(-1px);
-    }
+    .hero-text-link:hover { color: var(--cream); }
 
     .hero-stats {
       display: flex;
       gap: 2.5rem;
       margin-top: 3.5rem;
       padding-top: 2rem;
-      border-top: 1px solid rgba(255,255,255,0.12);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
       animation: fadeUp 0.6s 0.4s ease both;
     }
 
@@ -347,7 +143,7 @@
 
     .hero-stat-label {
       font-size: 0.78rem;
-      color: rgba(237,229,208,0.55);
+      color: rgba(237, 229, 208, 0.55);
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
@@ -363,11 +159,9 @@
       position: absolute;
       inset: 0;
       background: linear-gradient(135deg, var(--green) 0%, var(--green2) 50%, #5a8c3e 100%);
-      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
       z-index: 1;
     }
 
-    /* Decorative botanical SVG in hero */
     .hero-botanical {
       position: absolute;
       top: 50%;
@@ -415,7 +209,7 @@
       text-align: center;
       font-size: 0.65rem;
       letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.3);
+      color: rgba(255, 255, 255, 0.3);
       text-transform: uppercase;
       z-index: 4;
       padding: 0 1rem;
@@ -457,11 +251,6 @@
       opacity: 0.5;
     }
 
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
     /* ── ABOUT STRIP ── */
     .about-strip {
       display: grid;
@@ -497,26 +286,6 @@
       justify-content: center;
     }
 
-    .section-tag {
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--terra);
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .section-tag::before {
-      content: '';
-      display: block;
-      width: 24px;
-      height: 1.5px;
-      background: var(--terra);
-    }
-
     .about-content h2 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(1.8rem, 3vw, 2.6rem);
@@ -534,9 +303,7 @@
       max-width: 460px;
     }
 
-    .about-content a {
-      margin-top: 1rem;
-    }
+    .about-content a { margin-top: 1rem; }
 
     /* ── PRODUCTS SECTION ── */
     .products-section {
@@ -546,10 +313,7 @@
       background: var(--white);
     }
 
-    .section-header {
-      text-align: center;
-      margin-bottom: 3.5rem;
-    }
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
 
     .section-header h2 {
       font-family: 'Playfair Display', serif;
@@ -558,13 +322,7 @@
       margin-bottom: 0.75rem;
     }
 
-    .section-header p {
-      color: var(--muted);
-      font-size: 1rem;
-      max-width: 520px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
+    .section-header p { color: var(--muted); font-size: 1rem; max-width: 520px; margin: 0 auto; line-height: 1.6; }
 
     .products-grid {
       display: grid;
@@ -583,15 +341,11 @@
       cursor: pointer;
     }
 
-    .product-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(45, 74, 45, 0.12);
-    }
+    .product-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(45, 74, 45, 0.12); }
 
     .product-card-img {
       width: 100%;
       height: 220px;
-      object-fit: cover;
       background: var(--cream2);
       display: flex;
       align-items: center;
@@ -599,40 +353,14 @@
       overflow: hidden;
     }
 
-    .product-card-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    .product-card-img img { width: 100%; height: 100%; object-fit: cover; mix-blend-mode: multiply; }
 
-    .product-card-body {
-      padding: 1.4rem 1.5rem 1.6rem;
-    }
+    .product-card-body { padding: 1.4rem 1.5rem 1.6rem; }
 
-    .product-card-tag {
-      font-size: 0.68rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--terra);
-      font-weight: 500;
-      margin-bottom: 0.4rem;
-    }
+    .product-card-tag { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--terra); font-weight: 500; margin-bottom: 0.4rem; }
+    .product-card-name { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--green); margin-bottom: 0.5rem; }
+    .product-card-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
 
-    .product-card-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--green);
-      margin-bottom: 0.5rem;
-    }
-
-    .product-card-desc {
-      font-size: 0.88rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* placeholder product image */
     .product-placeholder {
       width: 100%;
       height: 220px;
@@ -642,11 +370,7 @@
       justify-content: center;
     }
 
-    .product-placeholder svg {
-      width: 64px;
-      height: 64px;
-      opacity: 0.25;
-    }
+    .product-placeholder svg { width: 64px; height: 64px; opacity: 0.25; }
 
     /* ── VALUES ── */
     .values-section {
@@ -679,29 +403,12 @@
       background: rgba(255, 255, 255, 0.03);
     }
 
-    .values-section .section-header h2 {
-      color: var(--cream);
-    }
+    .values-section .section-header h2 { color: var(--cream); }
+    .values-section .section-header p { color: rgba(237, 229, 208, 0.7); }
+    .values-section .section-tag { color: var(--gold-lt); }
+    .values-section .section-tag::before { background: var(--gold-lt); }
 
-    .values-section .section-header p {
-      color: rgba(237, 229, 208, 0.7);
-    }
-
-    .values-section .section-tag {
-      color: var(--gold-lt);
-    }
-
-    .values-section .section-tag::before {
-      background: var(--gold-lt);
-    }
-
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      max-width: 960px;
-      margin: 0 auto;
-    }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 960px; margin: 0 auto; }
 
     .value-card {
       padding: 2rem;
@@ -710,10 +417,7 @@
       transition: background 0.2s, border-color 0.2s;
     }
 
-    .value-card:hover {
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(255, 255, 255, 0.2);
-    }
+    .value-card:hover { background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.2); }
 
     .value-icon {
       width: 44px;
@@ -727,18 +431,8 @@
       font-size: 1.3rem;
     }
 
-    .value-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      color: var(--cream);
-      margin-bottom: 0.6rem;
-    }
-
-    .value-card p {
-      font-size: 0.88rem;
-      color: rgba(237, 229, 208, 0.65);
-      line-height: 1.65;
-    }
+    .value-card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--cream); margin-bottom: 0.6rem; }
+    .value-card p { font-size: 0.88rem; color: rgba(237, 229, 208, 0.65); line-height: 1.65; }
 
     /* ── CTA BANNER ── */
     .cta-banner {
@@ -749,232 +443,27 @@
       z-index: 2;
     }
 
-    .cta-banner h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-      color: var(--green);
-      margin-bottom: 1rem;
-    }
-
-    .cta-banner p {
-      color: var(--muted);
-      font-size: 1rem;
-      margin-bottom: 2rem;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.6;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--text);
-      color: rgba(247, 242, 232, 0.7);
-      padding: 3.5rem 4rem 2rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    .footer-top {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 3rem;
-      padding-bottom: 2.5rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      margin-bottom: 1.8rem;
-    }
-
-    .footer-brand-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
-      color: var(--cream);
-      margin-bottom: 0.75rem;
-    }
-
-    .footer-tagline {
-      font-size: 0.85rem;
-      line-height: 1.65;
-      max-width: 280px;
-    }
-
-    .footer-col h4 {
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--cream);
-      margin-bottom: 1rem;
-      font-weight: 500;
-    }
-
-    .footer-col ul {
-      list-style: none;
-    }
-
-    .footer-col ul li {
-      margin-bottom: 0.55rem;
-    }
-
-    .footer-col ul a {
-      color: rgba(247, 242, 232, 0.6);
-      text-decoration: none;
-      font-size: 0.88rem;
-      transition: color 0.2s;
-    }
-
-    .footer-col ul a:hover {
-      color: var(--cream);
-    }
-
-    .footer-col address {
-      font-style: normal;
-      font-size: 0.88rem;
-      line-height: 1.8;
-    }
-
-    .footer-col a {
-      color: rgba(247, 242, 232, 0.6);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-col a:hover {
-      color: var(--cream);
-    }
-
-    .footer-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.78rem;
-    }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    /* ── SCROLL REVEAL ── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .reveal-delay-1 {
-      transition-delay: 0.1s;
-    }
-
-    .reveal-delay-2 {
-      transition-delay: 0.2s;
-    }
-
-    .reveal-delay-3 {
-      transition-delay: 0.3s;
-    }
+    .cta-banner h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); color: var(--green); margin-bottom: 1rem; }
+    .cta-banner p { color: var(--muted); font-size: 1rem; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.6; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      nav {
-        padding: 1rem 1.5rem;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        min-height: auto;
-      }
-
-      .hero-right {
-        height: 340px;
-      }
-
-      .hero-left {
-        padding: 4rem 1.5rem 2rem;
-      }
-
-      .about-strip {
-        grid-template-columns: 1fr;
-      }
-
-      .about-img {
-        height: 300px;
-      }
-
-      .about-content {
-        padding: 3rem 1.5rem;
-      }
-
-      .products-section {
-        padding: 4rem 1.5rem;
-      }
-
-      .products-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .values-section {
-        padding: 4rem 1.5rem;
-      }
-
-      .values-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-
-      .cta-banner {
-        padding: 4rem 1.5rem;
-      }
-
-      footer {
-        padding: 3rem 1.5rem 1.5rem;
-      }
-
-      .footer-top {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-right { height: 340px; }
+      .hero-left { padding: 4rem 1.5rem 2rem; }
+      .about-strip { grid-template-columns: 1fr; }
+      .about-img { height: 300px; }
+      .about-content { padding: 3rem 1.5rem; }
+      .products-section { padding: 4rem 1.5rem; }
+      .products-grid { grid-template-columns: 1fr 1fr; }
+      .values-section { padding: 4rem 1.5rem; }
+      .values-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .cta-banner { padding: 4rem 1.5rem; }
     }
 
     @media (max-width: 580px) {
-      .products-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-stats {
-        gap: 1.5rem;
-      }
-    }
-
-    /* Remove black backgrounds from product images */
-    .product-card-img img {
-      mix-blend-mode: multiply;
-      background: transparent;
+      .products-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 1.5rem; }
     }
   </style>
 </head>
@@ -984,7 +473,6 @@
   <!-- NAV -->
   <nav>
     <a href="index.html" class="nav-logo">
-      <!-- Leaf logo mark -->
       <svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="17" cy="17" r="17" fill="#2d4a2d" />
         <path d="M17 6 C17 6, 27 12, 27 20 C27 25.5 22.5 28 17 28 C17 28, 17 18, 10 14 C13 14, 17 6, 17 6Z"
@@ -997,12 +485,23 @@
       </div>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
       <li><a href="products.html">Products</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
     </ul>
+    <button class="nav-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <!-- Mobile nav overlay -->
+  <div class="nav-mobile" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="nav-cta-mobile">Contact Us</a>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
@@ -1103,8 +602,7 @@
         </div>
         <div class="product-card-body">
           <div class="product-card-name">Fresh Peeled Taro Root</div>
-          <div class="product-card-desc">Peeled, vacuum-sealed, and ready to cook. Available in bulk for wholesale
-            customers.</div>
+          <div class="product-card-desc">Peeled, vacuum-sealed, and ready to cook. Available in bulk for wholesale customers.</div>
         </div>
       </div>
       <div class="product-card reveal reveal-delay-2">
@@ -1114,8 +612,7 @@
         <div class="product-card-body">
           <div class="product-card-tag">Imported</div>
           <div class="product-card-name">Cashews &amp; Nuts</div>
-          <div class="product-card-desc">A full range of imported roasted cashews and mixed nuts. 9 varieties available
-            wholesale by the box.</div>
+          <div class="product-card-desc">A full range of imported roasted cashews and mixed nuts. 9 varieties available wholesale by the box.</div>
         </div>
       </div>
       <div class="product-card reveal reveal-delay-3">
@@ -1125,8 +622,7 @@
         <div class="product-card-body">
           <div class="product-card-tag">Imported</div>
           <div class="product-card-name">Sunsweet Plums</div>
-          <div class="product-card-desc">Salt-dried Vietnamese plums, a popular specialty snack. Available wholesale by
-            the case.</div>
+          <div class="product-card-desc">Salt-dried Vietnamese plums, a popular specialty snack. Available wholesale by the case.</div>
         </div>
       </div>
     </div>
@@ -1145,7 +641,6 @@
     <div class="values-grid">
       <div class="value-card reveal reveal-delay-1">
         <div class="value-icon">
-          <!-- Leaf / freshness icon -->
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f0c040" stroke-width="1.8"
             stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 22C12 22, 4 16, 4 9C4 5, 7.5 2, 12 2C16.5 2, 20 5, 20 9C20 16, 12 22, 12 22Z" />
@@ -1159,7 +654,6 @@
       </div>
       <div class="value-card reveal reveal-delay-2">
         <div class="value-icon">
-          <!-- Box / fulfillment icon -->
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f0c040" stroke-width="1.8"
             stroke-linecap="round" stroke-linejoin="round">
             <polyline points="21 8 21 21 3 21 3 8" />
@@ -1172,7 +666,6 @@
       </div>
       <div class="value-card reveal reveal-delay-3">
         <div class="value-icon">
-          <!-- Handshake / service icon -->
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f0c040" stroke-width="1.8"
             stroke-linecap="round" stroke-linejoin="round">
             <path
@@ -1197,8 +690,7 @@
     <div class="footer-top">
       <div>
         <div class="footer-brand-name">Sunshine Produce</div>
-        <p class="footer-tagline">Fresh produce imported, processed, and delivered across Southern California. Quality
-          you can taste, service you can count on.</p>
+        <p class="footer-tagline">Fresh produce imported, processed, and delivered across Southern California. Quality you can taste, service you can count on.</p>
       </div>
       <div class="footer-col">
         <h4>Navigate</h4>
@@ -1221,24 +713,11 @@
     </div>
     <div class="footer-bottom">
       <span>© 2025 Sunshine Evergreen, Inc. All rights reserved.</span>
-      <span style="color:rgba(247,242,232,0.35);font-size:0.72rem;">Wholesale Produce Distributor · Los Angeles,
-        CA</span>
+      <span style="color:rgba(247,242,232,0.35);font-size:0.72rem;">Wholesale Produce Distributor · Los Angeles, CA</span>
     </div>
   </footer>
 
-  <script>
-    // Scroll reveal
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    window.addEventListener('load', () => {
-      document.querySelectorAll('.reveal').forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight) el.classList.add('visible');
-      });
-    });
-  </script>
+  <script src="scripts.js"></script>
 </body>
 
 </html>

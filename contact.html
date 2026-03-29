@@ -9,46 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'"/>
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500&display=swap"/></noscript>
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --cream: #f7f2e8; --cream2: #ede5d0; --green: #2d4a2d; --green2: #3e6b3e;
-      --gold: #c8930a; --gold-lt: #f0c040; --terra: #b85c38;
-      --text: #1e2a1e; --muted: #6b7c6b; --white: #ffffff;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
-    body::before {
-      content: ''; position: fixed; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none; z-index: 0; opacity: 0.5;
-    }
-
-    /* NAV */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 4rem; background: rgba(247,242,232,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--cream2); }
-    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
-    .nav-logo svg { width: 34px; height: 34px; }
-    .nav-logo-text { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--green); line-height: 1.1; }
-    .nav-logo-text span { display: block; font-size: 0.6rem; font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); font-family: 'DM Sans', sans-serif; }
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a { text-decoration: none; color: var(--text); font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em; position: relative; padding-bottom: 2px; transition: color 0.2s; }
-    .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1.5px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.25s ease; }
-    .nav-links a:hover { color: var(--green); }
-    .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
-    .nav-links a.active { color: var(--green); }
-    .nav-cta { background: var(--green); color: var(--white) !important; padding: 0.55rem 1.3rem !important; border-radius: 2px; transition: background 0.2s !important; }
-    .nav-cta:hover { background: var(--green2) !important; }
-    .nav-cta::after { display: none !important; }
-
-    /* PAGE HEADER */
-    .page-header { padding: 9rem 4rem 5rem; background: var(--green); position: relative; overflow: hidden; }
-    .page-header::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60px; background: var(--cream); clip-path: ellipse(55% 100% at 50% 100%); }
-    .page-header-inner { max-width: 700px; position: relative; z-index: 2; }
-    .section-tag { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-lt); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
-    .section-tag::before { content: ''; display: block; width: 24px; height: 1.5px; background: var(--gold-lt); }
-    .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 3.8rem); font-weight: 700; color: var(--cream); line-height: 1.1; margin-bottom: 1rem; }
-    .page-header p { font-size: 1rem; color: rgba(237,229,208,0.75); line-height: 1.7; max-width: 520px; }
-
     /* CONTACT BODY */
     .contact-body { padding: 5rem 4rem 6rem; position: relative; z-index: 2; }
     .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; max-width: 1100px; margin: 0 auto; align-items: start; }
@@ -95,8 +57,8 @@
     .form-group textarea { resize: vertical; min-height: 120px; }
     .form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1L6 7L11 1' stroke='%236b7c6b' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; }
 
-    .btn-primary { background: var(--green); color: var(--white); padding: 0.9rem 2.2rem; border-radius: 2px; border: none; font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.92rem; letter-spacing: 0.04em; cursor: pointer; transition: background 0.2s, transform 0.15s; width: 100%; }
-    .btn-primary:hover { background: var(--green2); transform: translateY(-1px); }
+    /* Full-width submit button */
+    .btn-submit { width: 100%; }
 
     .form-note { font-size: 0.78rem; color: var(--muted); text-align: center; margin-top: 1rem; line-height: 1.5; }
 
@@ -106,33 +68,11 @@
     .form-success h4 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--green); margin-bottom: 0.5rem; }
     .form-success p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
 
-    /* FOOTER */
-    footer { background: var(--text); color: rgba(247,242,232,0.7); padding: 3.5rem 4rem 2rem; position: relative; z-index: 2; }
-    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 1.8rem; }
-    .footer-brand-name { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--cream); margin-bottom: 0.75rem; }
-    .footer-tagline { font-size: 0.85rem; line-height: 1.65; max-width: 280px; }
-    .footer-col h4 { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream); margin-bottom: 1rem; font-weight: 500; }
-    .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 0.55rem; }
-    .footer-col ul a { color: rgba(247,242,232,0.6); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
-    .footer-col ul a:hover { color: var(--cream); }
-    .footer-col address { font-style: normal; font-size: 0.88rem; line-height: 1.8; }
-    .footer-col a { color: rgba(247,242,232,0.6); text-decoration: none; transition: color 0.2s; }
-    .footer-col a:hover { color: var(--cream); }
-    .footer-bottom { display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem; }
-
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.15s; }
-
     @media (max-width: 900px) {
-      nav { padding: 1rem 1.5rem; } .nav-links { display: none; }
       .page-header { padding: 7rem 1.5rem 4rem; }
       .contact-body { padding: 3rem 1.5rem 4rem; }
       .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
       .form-row { grid-template-columns: 1fr; }
-      footer { padding: 3rem 1.5rem 1.5rem; }
-      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
     }
   </style>
 </head>
@@ -154,9 +94,20 @@
     <li><a href="index.html">Home</a></li>
     <li><a href="products.html">Products</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="contact.html" class="active nav-cta">Contact Us</a></li>
+    <li><a href="contact.html" class="nav-cta active">Contact Us</a></li>
   </ul>
+  <button class="nav-hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- Mobile nav overlay -->
+<div class="nav-mobile" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="products.html">Products</a>
+  <a href="about.html">About</a>
+  <a href="contact.html" class="nav-cta-mobile">Contact Us</a>
+</div>
 
 <header class="page-header">
   <div class="page-header-inner">
@@ -251,7 +202,7 @@
             <option value="" disabled selected>Select one...</option>
             <option>Wholesale Pricing</option>
             <option>Product Availability</option>
-            <option>Delivery & Logistics</option>
+            <option>Delivery &amp; Logistics</option>
             <option>Existing Order</option>
             <option>Other</option>
           </select>
@@ -260,7 +211,7 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" placeholder="Tell us what you're looking for — product, quantity, delivery area, etc."></textarea>
         </div>
-        <button class="btn-primary" type="submit">Send Message</button>
+        <button class="btn-primary btn-submit" type="submit">Send Message</button>
         <p class="form-note">We typically respond within one business day. For urgent inquiries, call us directly at (562) 841-7881.</p>
       </form>
 
@@ -308,26 +259,15 @@
   </div>
 </footer>
 
+<script src="scripts.js"></script>
 <script>
-  // Reveal on scroll — also trigger elements already in view on load
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  // Immediately reveal anything already visible in the viewport
-  window.addEventListener('load', () => {
-    document.querySelectorAll('.reveal').forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight) el.classList.add('visible');
-    });
-  });
-
+  // Contact form submission (page-specific)
   document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
-    const form = e.target;
-    const data = new FormData(form);
+    var form = e.target;
+    var data = new FormData(form);
     try {
-      const res = await fetch(form.action, {
+      var res = await fetch(form.action, {
         method: 'POST',
         body: data,
         headers: { 'Accept': 'application/json' }
@@ -342,7 +282,6 @@
       alert('Something went wrong. Please try again or email us directly.');
     }
   });
-
 </script>
 </body>
 </html>

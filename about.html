@@ -9,46 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'"/>
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500&display=swap"/></noscript>
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --cream: #f7f2e8; --cream2: #ede5d0; --green: #2d4a2d; --green2: #3e6b3e;
-      --gold: #c8930a; --gold-lt: #f0c040; --terra: #b85c38;
-      --text: #1e2a1e; --muted: #6b7c6b; --white: #ffffff;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
-    body::before {
-      content: ''; position: fixed; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none; z-index: 0; opacity: 0.5;
-    }
-
-    /* NAV */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 4rem; background: rgba(247,242,232,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--cream2); }
-    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
-    .nav-logo svg { width: 34px; height: 34px; }
-    .nav-logo-text { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--green); line-height: 1.1; }
-    .nav-logo-text span { display: block; font-size: 0.6rem; font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); font-family: 'DM Sans', sans-serif; }
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a { text-decoration: none; color: var(--text); font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em; position: relative; padding-bottom: 2px; transition: color 0.2s; }
-    .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1.5px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.25s ease; }
-    .nav-links a:hover { color: var(--green); }
-    .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
-    .nav-links a.active { color: var(--green); }
-    .nav-cta { background: var(--green); color: var(--white) !important; padding: 0.55rem 1.3rem !important; border-radius: 2px; transition: background 0.2s !important; }
-    .nav-cta:hover { background: var(--green2) !important; }
-    .nav-cta::after { display: none !important; }
-
-    /* PAGE HEADER */
-    .page-header { padding: 9rem 4rem 5rem; background: var(--green); position: relative; overflow: hidden; }
-    .page-header::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60px; background: var(--cream); clip-path: ellipse(55% 100% at 50% 100%); }
-    .page-header-inner { max-width: 700px; position: relative; z-index: 2; }
-    .section-tag { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-lt); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
-    .section-tag::before { content: ''; display: block; width: 24px; height: 1.5px; background: var(--gold-lt); }
-    .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 3.8rem); font-weight: 700; color: var(--cream); line-height: 1.1; margin-bottom: 1rem; }
-    .page-header p { font-size: 1rem; color: rgba(237,229,208,0.75); line-height: 1.7; max-width: 560px; }
-
     /* STATS BAR */
     .stats-bar { display: flex; justify-content: center; background: var(--text); position: relative; z-index: 2; }
     .stats-bar-item { flex: 1; text-align: center; padding: 2.5rem 1.5rem; border-right: 1px solid rgba(255,255,255,0.08); max-width: 280px; }
@@ -61,33 +23,17 @@
     .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; max-width: 1100px; margin: 0 auto; align-items: center; }
     .story-visual { position: relative; }
     .story-img-main {
-      width: 100%;
-      aspect-ratio: unset;
-      background: transparent;
-      border-radius: 3px;
-      overflow: visible;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
+      width: 100%; background: transparent; border-radius: 3px; overflow: visible;
+      display: flex; align-items: center; justify-content: center; padding: 1rem;
     }
-    .story-img-main img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      mix-blend-mode: multiply;
-      filter: drop-shadow(0 12px 30px rgba(0,0,0,0.15));
-    }
-    .story-content .section-tag { color: var(--terra); }
-    .story-content .section-tag::before { background: var(--terra); }
+    .story-img-main img { width: 100%; height: auto; object-fit: contain; mix-blend-mode: multiply; filter: drop-shadow(0 12px 30px rgba(0,0,0,0.15)); }
     .story-content h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; color: var(--green); line-height: 1.2; margin-bottom: 1.5rem; }
     .story-content p { font-size: 0.97rem; line-height: 1.78; color: var(--muted); margin-bottom: 1.1rem; }
 
     /* WHAT WE DO */
     .process-section { padding: 6rem 4rem; background: var(--white); position: relative; z-index: 2; }
     .process-section .section-header { text-align: center; margin-bottom: 4rem; }
-    .process-section .section-header .section-tag { justify-content: center; color: var(--terra); }
-    .process-section .section-header .section-tag::before { background: var(--terra); }
+    .process-section .section-header .section-tag { justify-content: center; }
     .process-section .section-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--green); margin-bottom: 0.75rem; }
     .process-section .section-header p { color: var(--muted); font-size: 1rem; max-width: 520px; margin: 0 auto; line-height: 1.6; }
     .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-width: 1100px; margin: 0 auto; position: relative; }
@@ -101,8 +47,6 @@
     /* WHO WE WORK WITH */
     .who-section { padding: 6rem 4rem; background: var(--cream); position: relative; z-index: 2; }
     .who-section-inner { max-width: 680px; margin: 0 auto; }
-    .who-section .section-tag { color: var(--terra); }
-    .who-section .section-tag::before { background: var(--terra); }
     .who-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--green); margin-bottom: 1.2rem; }
     .who-section p { font-size: 0.97rem; line-height: 1.78; color: var(--muted); margin-bottom: 1rem; }
     .who-list { list-style: none; margin: 0.5rem 0 1.5rem; padding: 0; }
@@ -112,8 +56,6 @@
     /* VALUES STRIP */
     .values-strip { padding: 6rem 4rem; background: var(--cream2); position: relative; z-index: 2; }
     .values-strip-inner { max-width: 1100px; margin: 0 auto; }
-    .values-strip .section-tag { color: var(--terra); margin-bottom: 1rem; }
-    .values-strip .section-tag::before { background: var(--terra); }
     .values-strip h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--green); margin-bottom: 3rem; }
     .values-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
     .value-item { background: var(--white); padding: 2rem; border-radius: 3px; border: 1px solid var(--cream2); display: flex; gap: 1.2rem; align-items: flex-start; transition: box-shadow 0.2s; }
@@ -126,42 +68,15 @@
     /* WHERE WE OPERATE */
     .operate-section { padding: 6rem 4rem; background: var(--white); position: relative; z-index: 2; }
     .operate-inner { max-width: 680px; margin: 0 auto; }
-    .operate-section .section-tag { color: var(--terra); }
-    .operate-section .section-tag::before { background: var(--terra); }
     .operate-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--green); margin-bottom: 1.2rem; }
     .operate-section p { font-size: 0.97rem; line-height: 1.78; color: var(--muted); margin-bottom: 1rem; }
 
-    /* CTA */
+    /* CTA — green background variant */
     .cta-banner { padding: 5rem 4rem; text-align: center; background: var(--green); position: relative; z-index: 2; }
     .cta-banner h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); color: var(--cream); margin-bottom: 1rem; }
     .cta-banner p { color: rgba(237,229,208,0.7); font-size: 1rem; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.6; }
-    .btn-gold { background: var(--gold-lt); color: var(--text); padding: 0.9rem 2rem; border-radius: 2px; text-decoration: none; font-weight: 500; font-size: 0.9rem; letter-spacing: 0.04em; transition: background 0.2s, transform 0.15s; display: inline-block; }
-    .btn-gold:hover { background: var(--gold); transform: translateY(-1px); }
-
-    /* FOOTER */
-    footer { background: var(--text); color: rgba(247,242,232,0.7); padding: 3.5rem 4rem 2rem; position: relative; z-index: 2; }
-    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 1.8rem; }
-    .footer-brand-name { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--cream); margin-bottom: 0.75rem; }
-    .footer-tagline { font-size: 0.85rem; line-height: 1.65; max-width: 280px; }
-    .footer-col h4 { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream); margin-bottom: 1rem; font-weight: 500; }
-    .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 0.55rem; }
-    .footer-col ul a { color: rgba(247,242,232,0.6); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
-    .footer-col ul a:hover { color: var(--cream); }
-    .footer-col address { font-style: normal; font-size: 0.88rem; line-height: 1.8; }
-    .footer-col a { color: rgba(247,242,232,0.6); text-decoration: none; transition: color 0.2s; }
-    .footer-col a:hover { color: var(--cream); }
-    .footer-bottom { display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem; }
-
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
 
     @media (max-width: 900px) {
-      nav { padding: 1rem 1.5rem; } .nav-links { display: none; }
       .page-header { padding: 7rem 1.5rem 4rem; }
       .stats-bar { flex-wrap: wrap; }
       .stats-bar-item { flex: 1 1 50%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
@@ -175,8 +90,10 @@
       .values-list { grid-template-columns: 1fr; }
       .operate-section { padding: 4rem 1.5rem; }
       .cta-banner { padding: 4rem 1.5rem; }
-      footer { padding: 3rem 1.5rem 1.5rem; }
-      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    @media (max-width: 580px) {
+      .process-steps { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -200,7 +117,18 @@
     <li><a href="about.html" class="active">About</a></li>
     <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
   </ul>
+  <button class="nav-hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- Mobile nav overlay -->
+<div class="nav-mobile" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="products.html">Products</a>
+  <a href="about.html">About</a>
+  <a href="contact.html" class="nav-cta-mobile">Contact Us</a>
+</div>
 
 <header class="page-header">
   <div class="page-header-inner">
@@ -397,17 +325,6 @@
   </div>
 </footer>
 
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  window.addEventListener('load', () => {
-    document.querySelectorAll('.reveal').forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight) el.classList.add('visible');
-    });
-  });
-</script>
+<script src="scripts.js"></script>
 </body>
 </html>
