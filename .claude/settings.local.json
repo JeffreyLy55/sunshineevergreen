@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//tmp/awesome-claude-skills/connect/**)",
+      "Read(//tmp/awesome-claude-skills/connect-apps/**)"
+    ]
+  }
+}
