@@ -338,6 +338,7 @@ nav {
 }
 
 .process-visual .img-processed {
+  object-fit: contain;
   opacity: 0; /* Hidden by default */
   z-index: 2;
 }
