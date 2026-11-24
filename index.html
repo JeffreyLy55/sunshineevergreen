@@ -179,7 +179,8 @@
       const processed = document.getElementById('step-processed');
       let scheduled = false;
       function update() {
-        const active = processed.getBoundingClientRect().top < window.innerHeight * 0.72;
+        const trigger = window.innerWidth <= 900 ? 0.72 : 0.5;
+        const active = processed.getBoundingClientRect().top < window.innerHeight * trigger;
         process.classList.toggle('is-processed', active);
         raw.classList.toggle('active', !active);
         processed.classList.toggle('active', active);
