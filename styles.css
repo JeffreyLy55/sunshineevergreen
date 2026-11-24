@@ -343,6 +343,7 @@ nav {
 }
 
 .process-visual .img-raw {
+  object-fit: contain;
   z-index: 1;
 }
 
