@@ -21,7 +21,7 @@
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" />
   </noscript>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=process-flow-2" />
 </head>
 
 <body>
@@ -77,25 +77,25 @@
       <p>We peel, cut, and vacuum-seal taro at our Artesia facility, reducing preparation time for your team.</p>
     </div>
     
-    <div class="process-interactive reveal reveal-delay-2" id="process-interactive">
-      <!-- The visual container with overlay transition -->
-      <div class="process-visual">
-        <!-- Processed image on top, hidden by opacity until active -->
-        <img src="images/taro_green_corrected.png" alt="Peeled taro in a green Sunshine Produce bag" class="img-processed" />
-        <!-- Raw image on bottom -->
-        <img src="images/taro_raw_transparent.png" alt="Whole taro roots in pink mesh bags" class="img-raw" />
-      </div>
-      
-      <div class="process-steps">
-        <div class="process-step active" id="step-raw">
-          <h3>1. Direct Import & Selection</h3>
+    <div class="process-flow">
+      <article class="process-row">
+        <div class="process-image process-image-raw">
+          <img src="images/taro_raw_transparent.png" alt="Whole taro roots in three pink mesh bags" width="1254" height="1254" />
+        </div>
+        <div class="process-copy">
+          <h3>1. Direct Import &amp; Selection</h3>
           <p>We source whole taro roots from our suppliers and inspect each batch for quality before processing.</p>
         </div>
-        <div class="process-step" id="step-processed">
-          <h3>2. Processed & Vacuum-Sealed</h3>
+      </article>
+      <article class="process-row process-row-processed">
+        <div class="process-image process-image-processed">
+          <img src="images/taro_green_clear_sealed.png" alt="Peeled taro vacuum-sealed in a green Sunshine Produce bag" />
+        </div>
+        <div class="process-copy">
+          <h3>2. Processed &amp; Vacuum-Sealed</h3>
           <p>We peel and cut the taro, then vacuum-seal it at our Artesia facility. It arrives packaged and ready to cook.</p>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 
@@ -176,43 +176,5 @@
   </footer>
 
   <script src="scripts.js"></script>
-  <script>
-    // SCROLL TRIGGERS for Interactive Transition
-    document.addEventListener("DOMContentLoaded", () => {
-      
-      const processInteractive = document.getElementById("process-interactive");
-      const stepRaw = document.getElementById("step-raw");
-      const stepProcessed = document.getElementById("step-processed");
-      
-      // We trigger the transition roughly exactly when the user reaches the middle of the process section
-      const observerOptions = {
-        root: null,
-        rootMargin: "-45% 0px -45% 0px", // Trigger when the element is in the middle 10% of viewport
-        threshold: 0
-      };
-
-      const scrollObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          // If the second step comes into view, we toggle to processed mode
-          if (entry.isIntersecting) {
-            processInteractive.classList.add("is-processed");
-            stepRaw.classList.remove("active");
-            stepProcessed.classList.add("active");
-          } else {
-            // Check if scrolling UP past it
-            const boundingClientRect = entry.boundingClientRect;
-            if (boundingClientRect.top > 0) {
-              processInteractive.classList.remove("is-processed");
-              stepProcessed.classList.remove("active");
-              stepRaw.classList.add("active");
-            }
-          }
-        });
-      }, observerOptions);
-
-      // We track the second step paragraph to know when to trigger the swap
-      scrollObserver.observe(stepProcessed);
-    });
-  </script>
 </body>
 </html>

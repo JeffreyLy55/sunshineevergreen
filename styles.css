@@ -284,8 +284,8 @@ nav {
    TARO PROCESS (Interactive Hover/Scroll)
    ───────────────────────────────────────────────────────── */
 .process-section {
-  padding: 7rem 4rem;
-  background: var(--white);
+  padding: 6rem 4rem;
+  background: var(--cream);
   position: relative;
 }
 
@@ -309,80 +309,52 @@ nav {
   line-height: 1.7;
 }
 
-/* The Interactive Container */
-.process-interactive {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 4rem;
-  max-width: 1200px;
+/* Each product stays beside its own process description. */
+.process-flow {
+  max-width: 1100px;
   margin: 0 auto;
+  display: grid;
+  gap: 4rem;
+}
+
+.process-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
   align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
 }
 
-.process-visual {
-  position: relative;
+.process-image {
+  min-width: 0;
+  padding: 0 1rem;
+}
+
+.process-image img {
+  display: block;
   width: 100%;
-  aspect-ratio: 4/5;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 24px 60px rgba(60,42,77,0.15);
-}
-
-.process-visual img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.process-visual .img-processed {
+  height: auto;
   object-fit: contain;
-  opacity: 0; /* Hidden by default */
-  z-index: 2;
 }
 
-.process-visual .img-raw {
-  object-fit: contain;
-  z-index: 1;
+.process-image-processed img {
+  width: min(100%, 310px);
+  margin: 0 auto;
 }
 
-/* Triggers via JS IntersectionObserver mapping active class */
-.process-interactive.is-processed .process-visual .img-processed {
-  opacity: 1;
-}
+.process-row-processed .process-image { grid-column: 2; grid-row: 1; }
+.process-row-processed .process-copy { grid-column: 1; grid-row: 1; }
 
-.process-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  position: relative;
-}
-
-.process-step {
-  padding: 2rem;
-  border-left: 3px solid var(--cream2);
-  transition: all 0.4s ease;
-  opacity: 0.5;
-}
-
-.process-step.active {
-  border-color: var(--taro-primary);
-  opacity: 1;
-  background: var(--cream);
-}
-
-.process-step h3 {
+.process-copy h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
   color: var(--taro-dark);
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
-.process-step p {
+.process-copy p {
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.75;
+  max-width: 42ch;
 }
 
 /* ─────────────────────────────────────────────────────────
@@ -492,7 +464,15 @@ footer {
   .nav-links { display: none; }
   .hero-content { padding: 2rem 1.5rem; }
   .process-section, .values-b2b, .cta-banner, footer { padding: 4rem 1.5rem; }
-  .process-interactive { grid-template-columns: 1fr; gap: 2rem; }
+  .process-header { margin-bottom: 2rem; }
+  .process-flow { gap: 3.5rem; }
+  .process-row { grid-template-columns: 1fr; gap: 1rem; }
+  .process-row-processed .process-image,
+  .process-row-processed .process-copy { grid-column: auto; grid-row: auto; }
+  .process-image { padding: 0 0.75rem; }
+  .process-image-raw { max-width: 520px; margin: 0 auto; }
+  .process-image-processed img { width: min(72%, 270px); }
+  .process-copy { max-width: 520px; width: 100%; margin: 0 auto; }
   .values-grid { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
   .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
