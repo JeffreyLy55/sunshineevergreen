@@ -21,7 +21,7 @@
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" />
   </noscript>
-  <link rel="stylesheet" href="styles.css?v=process-flow-2" />
+  <link rel="stylesheet" href="styles.css?v=scroll-process-3" />
 </head>
 
 <body>
@@ -77,25 +77,21 @@
       <p>We peel, cut, and vacuum-seal taro at our Artesia facility, reducing preparation time for your team.</p>
     </div>
     
-    <div class="process-flow">
-      <article class="process-row">
-        <div class="process-image process-image-raw">
-          <img src="images/taro_raw_transparent.png" alt="Whole taro roots in three pink mesh bags" width="1254" height="1254" />
-        </div>
-        <div class="process-copy">
+    <div class="process-interactive" id="process-interactive">
+      <div class="process-visual">
+        <img src="images/taro_raw_transparent.png" alt="Whole taro roots in three pink mesh bags" class="img-raw" />
+        <img src="images/taro_green_clear_sealed.png" alt="Peeled taro in a green Sunshine Produce bag" class="img-processed" />
+      </div>
+      <div class="process-steps">
+        <div class="process-step active" id="step-raw">
           <h3>1. Direct Import &amp; Selection</h3>
           <p>We source whole taro roots from our suppliers and inspect each batch for quality before processing.</p>
         </div>
-      </article>
-      <article class="process-row process-row-processed">
-        <div class="process-image process-image-processed">
-          <img src="images/taro_green_clear_sealed.png" alt="Peeled taro vacuum-sealed in a green Sunshine Produce bag" />
-        </div>
-        <div class="process-copy">
+        <div class="process-step" id="step-processed">
           <h3>2. Processed &amp; Vacuum-Sealed</h3>
           <p>We peel and cut the taro, then vacuum-seal it at our Artesia facility. It arrives packaged and ready to cook.</p>
         </div>
-      </article>
+      </div>
     </div>
   </section>
 
@@ -176,5 +172,26 @@
   </footer>
 
   <script src="scripts.js"></script>
+  <script>
+    (() => {
+      const process = document.getElementById('process-interactive');
+      const raw = document.getElementById('step-raw');
+      const processed = document.getElementById('step-processed');
+      let scheduled = false;
+      function update() {
+        const active = processed.getBoundingClientRect().top < window.innerHeight * 0.72;
+        process.classList.toggle('is-processed', active);
+        raw.classList.toggle('active', !active);
+        processed.classList.toggle('active', active);
+        scheduled = false;
+      }
+      function schedule() {
+        if (!scheduled) { scheduled = true; requestAnimationFrame(update); }
+      }
+      window.addEventListener('scroll', schedule, { passive: true });
+      window.addEventListener('resize', schedule);
+      update();
+    })();
+  </script>
 </body>
 </html>
